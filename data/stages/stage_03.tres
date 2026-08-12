@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="StageData" format=3 uid="uid://bgdkmpks2n1n5"]
+
+[ext_resource type="Script" uid="uid://dc8rdjeepxpdt" path="res://scripts/stage_data.gd" id="1_ftwjy"]
+[ext_resource type="Texture2D" uid="uid://cbgn68xqljqjf" path="res://assets/Max_a_сделай_в_стиле_чиби_.png" id="2_nsqa2"]
+
+[resource]
+script = ExtResource("1_ftwjy")
+stage_name = "Подросток"
+texture = ExtResource("2_nsqa2")
+animation_prefix = "stage_3"
+visual_scale = 4.199999999999999
+speed_multiplier = 1.25
+metadata/_custom_type_script = "uid://dc8rdjeepxpdt"

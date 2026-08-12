@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="StageData" format=3 uid="uid://dntf14qafgkak"]
+
+[ext_resource type="Script" uid="uid://dc8rdjeepxpdt" path="res://scripts/stage_data.gd" id="1_fwui5"]
+[ext_resource type="Texture2D" uid="uid://cbgn68xqljqjf" path="res://assets/Max_a_сделай_в_стиле_чиби_.png" id="2_o7wb6"]
+
+[resource]
+script = ExtResource("1_fwui5")
+stage_name = "Средний возраст"
+texture = ExtResource("2_o7wb6")
+animation_prefix = "stage_7"
+visual_scale = 4.6
+speed_multiplier = 0.9
+metadata/_custom_type_script = "uid://dc8rdjeepxpdt"
