@@ -10,7 +10,10 @@ radius = 56.008926
 radius = 72.0
 
 [node name="Player" type="CharacterBody2D" unique_id=886771977]
+scale = Vector2(0.3, 0.3)
+collision_mask = 0
 script = ExtResource("1_3vyb7")
+speed = 300.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1504283663]
 scale = Vector2(0.2, 0.2)
@@ -20,6 +23,8 @@ texture = ExtResource("2_g2els")
 shape = SubResource("CircleShape2D_g2els")
 
 [node name="EatArea" type="Area2D" parent="." unique_id=352132862]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EatArea" unique_id=70787004]
 shape = SubResource("CircleShape2D_qhqgy")

@@ -1,3 +1,44 @@
 [gd_scene format=3 uid="uid://boclwruf7lms"]
 
+[ext_resource type="PackedScene" uid="uid://tt0nue78cw4h" path="res://scenes/enemy.tscn" id="1_rvslj"]
+[ext_resource type="PackedScene" uid="uid://bvwxemcji3aob" path="res://scenes/player.tscn" id="2_0bbpv"]
+[ext_resource type="Script" uid="uid://cc1hllw7xxbj2" path="res://scripts/debug_ui.gd" id="3_0bbpv"]
+
 [node name="Main" type="Node2D" unique_id=206965003]
+
+[node name="Enemies" type="Node2D" parent="." unique_id=155920961]
+
+[node name="Enemy" parent="Enemies" unique_id=447026914 instance=ExtResource("1_rvslj")]
+position = Vector2(37, 156)
+
+[node name="Enemy2" parent="Enemies" unique_id=1349232255 instance=ExtResource("1_rvslj")]
+position = Vector2(267, 43)
+
+[node name="Enemy3" parent="Enemies" unique_id=541954079 instance=ExtResource("1_rvslj")]
+position = Vector2(77, 43)
+
+[node name="Player" parent="." unique_id=886771977 instance=ExtResource("2_0bbpv")]
+position = Vector2(181, 125)
+
+[node name="DebugUI" type="CanvasLayer" parent="." unique_id=796483277]
+script = ExtResource("3_0bbpv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DebugUI" unique_id=302478184]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StageLabel" type="Label" parent="DebugUI/VBoxContainer" unique_id=1346878822]
+layout_mode = 2
+text = "Стадия: 1/10"
+
+[node name="TotalLabel" type="Label" parent="DebugUI/VBoxContainer" unique_id=696613155]
+layout_mode = 2
+text = "Съедено врагов: 0"
+
+[node name="WarningLabel" type="Label" parent="DebugUI/VBoxContainer" unique_id=1150696281]
+layout_mode = 2
+text = "Старость!"
+
+[node name="DeathLabel" type="Label" parent="DebugUI/VBoxContainer" unique_id=1305440372]
+layout_mode = 2
+text = "Игрок умер от старости"
