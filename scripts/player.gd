@@ -102,11 +102,18 @@ func apply_stage(new_stage: int) -> void:
 
 	else:
 		# Временный fallback, если StageData ещё не назначены.
-		var fallback_index := mini(index, 9)
+		# Теперь он автоматически подстраивается под AgeManager.MAX_STAGE.
+		var max_index := AgeManager.MAX_STAGE - 1
 
-		target_modulate = Color.from_hsv(float(fallback_index) / 10.0, 0.65, 0.95)
-		target_scale = 0.6 + fallback_index * 0.07
-		current_speed_multiplier = clamp(1.35 - fallback_index * 0.08, 0.55, 1.5)
+		if max_index < 1:
+			max_index = 1
+
+		var fallback_index := mini(index, max_index)
+		var t := float(fallback_index) / float(max_index)
+
+		target_modulate = Color.from_hsv(t, 0.65, 0.95)
+		target_scale = 0.6 + (1.25 - 0.6) * t
+		current_speed_multiplier = 1.35 + (0.6 - 1.35) * t
 
 	if visual:
 		if transition_tween:

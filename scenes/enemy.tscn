@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://tt0nue78cw4h"]
 
 [ext_resource type="Script" uid="uid://cd4nkky8ufpte" path="res://scripts/enemy.gd" id="1_md0e3"]
-[ext_resource type="Texture2D" uid="uid://01uce82ljqul" path="res://assets/Max_a_сделай_в_стиле_аниме (3).png" id="2_md0e3"]
+[ext_resource type="Texture2D" uid="uid://cu2pn3sydjlfo" path="res://assets/Max_a_сделай_стикер_в_стил.png" id="2_md0e3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ne0r2"]
-radius = 17.029387
+radius = 520.8646
 
 [node name="Enemy" type="Area2D" unique_id=447026914]
+scale = Vector2(0.1, 0.1)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_md0e3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=374370464]
-scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_md0e3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=496830557]

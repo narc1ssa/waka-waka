@@ -8,7 +8,7 @@ signal rejuvenated(new_stage)
 signal game_reset()
 
 const KILLS_PER_STAGE := 10
-const MAX_STAGE := 10
+const MAX_STAGE := 5
 const OLD_AGE_TIME := 5.0
 const DEBUG_KEYS_ENABLED := true
 
@@ -63,6 +63,9 @@ func eat_enemy() -> void:
 		if stage < MAX_STAGE:
 			stage += 1
 			stage_changed.emit(stage)
+
+			if stage == MAX_STAGE:
+				_start_old_age()
 		else:
 			_start_old_age()
 
