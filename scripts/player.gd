@@ -31,6 +31,7 @@ func _ready() -> void:
 	animated_sprite = get_node_or_null("Visual/AnimatedSprite2D")
 
 	eat_area.area_entered.connect(_on_eat_area_area_entered)
+	eat_area.body_entered.connect(_on_eat_area_body_entered)
 
 	AgeManager.stage_changed.connect(_on_stage_changed)
 	AgeManager.player_died_old_age.connect(_on_player_died)
@@ -54,23 +55,25 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_eat_area_area_entered(area: Area2D) -> void:
-	if area.is_in_group("enemy"):
-		AgeManager.eat_enemy()
-		_consume_area(area)
-
-	elif area.is_in_group("pill"):
+	if area.is_in_group("pill"):
 		AgeManager.eat_rejuvenating_pill(pill_target_stage)
 		_consume_area(area)
 
 
-func _consume_area(area: Area2D) -> void:
-	if not is_instance_valid(area):
+func _on_eat_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemy"):
+		AgeManager.eat_enemy()
+		_consume_area(body)
+
+
+func _consume_area(node: Node2D) -> void:
+	if not is_instance_valid(node):
 		return
 
-	if area.has_method("eat"):
-		area.eat()
+	if node.has_method("eat"):
+		node.eat()
 	else:
-		area.queue_free()
+		node.queue_free()
 
 
 func _on_stage_changed(new_stage: int) -> void:

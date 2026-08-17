@@ -1,20 +1,20 @@
 [gd_scene format=3 uid="uid://tt0nue78cw4h"]
 
 [ext_resource type="Script" uid="uid://cd4nkky8ufpte" path="res://scripts/enemy.gd" id="1_md0e3"]
-[ext_resource type="Texture2D" uid="uid://cu2pn3sydjlfo" path="res://assets/Max_a_сделай_стикер_в_стил.png" id="2_md0e3"]
+[ext_resource type="SpriteFrames" uid="uid://j0v2g68tbeuq" path="res://assets/enemies/new_sprite_frames.tres" id="2_md0e3"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ne0r2"]
-radius = 520.8646
+[sub_resource type="CircleShape2D" id="CircleShape2D_8fd27"]
+radius = 71.25853
 
-[node name="Enemy" type="Area2D" unique_id=447026914]
-scale = Vector2(0.1, 0.1)
+[node name="Enemy" type="CharacterBody2D" unique_id=2081254478]
+scale = Vector2(0.3, 0.3)
 collision_layer = 2
-collision_mask = 0
+collision_mask = 8
 script = ExtResource("1_md0e3")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=374370464]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_md0e3")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=206209545]
+sprite_frames = ExtResource("2_md0e3")
+animation = &"enemy1_idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=496830557]
-shape = SubResource("CircleShape2D_ne0r2")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=844492427]
+shape = SubResource("CircleShape2D_8fd27")

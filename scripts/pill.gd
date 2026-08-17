@@ -1,7 +1,7 @@
 extends Area2D
 
 # Если 0 - таблетка живёт бесконечно.
-@export var lifetime := 0.0
+@export var lifetime := 10.0
 
 # Пульсация, чтобы таблетка была заметнее.
 @export var pulse := true

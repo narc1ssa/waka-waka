@@ -6,22 +6,30 @@ extends Node2D
 @export var spawn_on_old_age := true
 
 # Спавнить таблетку заранее на определённой стадии.
+# Для 5 стадий хорошо использовать 4 или 5.
 # Если 0 - не спавнить по стадии.
-@export var spawn_at_stage := 5
+@export var spawn_at_stage := 4
 
 # Сколько таблеток одновременно может быть на уровне.
-@export var max_active_pills := 1
+@export var max_active_pills := 2
 
 # Отладочная клавиша для ручного спавна таблетки.
 @export var debug_spawn_key := KEY_B
 
-@onready var items: Node2D = $Items
-@onready var pill_spawn_points: Node2D = $PillSpawnPoints
+var ground: Sprite2D
+var player_camera: Camera2D
+var items: Node2D
+var pill_spawn_points: Node2D
 
 var active_pills := []
 
 
 func _ready() -> void:
+	ground = get_node_or_null("Ground")
+	player_camera = get_node_or_null("Player/Camera2D")
+	items = get_node_or_null("Items")
+	pill_spawn_points = get_node_or_null("PillSpawnPoints")
+
 	AgeManager.stage_changed.connect(_on_stage_changed)
 	AgeManager.old_age_started.connect(_on_old_age_started)
 	AgeManager.game_reset.connect(_on_game_reset)
@@ -68,9 +76,21 @@ func spawn_pill() -> void:
 			if point:
 				spawn_position = point.global_position
 
+	else:
+		var player := get_node_or_null("Player")
+
+		if player:
+			spawn_position = player.global_position + Vector2(64, 0)
+
 	var pill := pill_scene.instantiate()
 
-	items.add_child(pill)
+	var parent: Node = self
+
+	if items:
+		parent = items
+
+	parent.add_child(pill)
+
 	pill.global_position = spawn_position
 
 	active_pills.append(pill)

@@ -394,15 +394,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
-radius = 56.008926
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c01mt"]
+radius = 24.0
+height = 120.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
-radius = 72.0
+radius = 30.066593
 
 [node name="Player" type="CharacterBody2D" unique_id=886771977]
 scale = Vector2(0.5, 0.5)
-collision_mask = 0
+collision_mask = 8
 script = ExtResource("1_3vyb7")
 base_speed = 250.0
 stages = Array[ExtResource("2_jej6c")]([ExtResource("3_f1ej7"), ExtResource("4_oprun"), ExtResource("5_a8ls1"), ExtResource("6_qfm1y"), ExtResource("7_fulsm")])
@@ -410,12 +411,13 @@ stages = Array[ExtResource("2_jej6c")]([ExtResource("3_f1ej7"), ExtResource("4_o
 [node name="Visual" type="Node2D" parent="." unique_id=320943522]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visual" unique_id=653797930]
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_bvp88")
 animation = &"stage_5_walk_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=265808849]
-shape = SubResource("CircleShape2D_g2els")
+position = Vector2(0, 22)
+shape = SubResource("CapsuleShape2D_c01mt")
 
 [node name="EatArea" type="Area2D" parent="." unique_id=352132862]
 collision_layer = 0
@@ -423,3 +425,7 @@ collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EatArea" unique_id=70787004]
 shape = SubResource("CircleShape2D_qhqgy")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1140178656]
+zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true

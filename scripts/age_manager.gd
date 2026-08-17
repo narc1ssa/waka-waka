@@ -9,7 +9,7 @@ signal game_reset()
 
 const KILLS_PER_STAGE := 10
 const MAX_STAGE := 5
-const OLD_AGE_TIME := 5.0
+const OLD_AGE_TIME := 20.0
 const DEBUG_KEYS_ENABLED := true
 
 enum State {

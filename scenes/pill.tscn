@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://r8gumdr3ce2g" path="res://assets/pill/Max_a_помести_в_домик_посе.png" id="2_nnkvg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nnkvg"]
-radius = 83.0
-height = 234.0
+radius = 40.0
+height = 106.0
 
 [node name="Pill" type="Area2D" unique_id=403357315]
 collision_layer = 4
@@ -16,7 +16,7 @@ lifetime = 8.0
 [node name="Visual" type="Node2D" parent="." unique_id=412568667]
 
 [node name="Sprite2D" type="Sprite2D" parent="Visual" unique_id=1955892059]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_nnkvg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1352026579]
