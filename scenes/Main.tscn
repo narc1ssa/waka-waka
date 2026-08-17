@@ -3,27 +3,45 @@
 [ext_resource type="Script" uid="uid://bt7k3dwq6u48m" path="res://scenes/main.gd" id="1_rarhs"]
 [ext_resource type="PackedScene" uid="uid://tt0nue78cw4h" path="res://scenes/enemy.tscn" id="1_rvslj"]
 [ext_resource type="PackedScene" uid="uid://bvwxemcji3aob" path="res://scenes/player.tscn" id="2_0bbpv"]
+[ext_resource type="PackedScene" uid="uid://yejykavrpwxj" path="res://scenes/pill.tscn" id="2_vcsgt"]
 [ext_resource type="Script" uid="uid://cc1hllw7xxbj2" path="res://scripts/debug_ui.gd" id="3_0bbpv"]
 
 [node name="Main" type="Node2D" unique_id=206965003]
 script = ExtResource("1_rarhs")
+pill_scene = ExtResource("2_vcsgt")
 
 [node name="Enemies" type="Node2D" parent="." unique_id=155920961]
 
 [node name="Enemy" parent="Enemies" unique_id=447026914 instance=ExtResource("1_rvslj")]
-position = Vector2(37, 156)
+position = Vector2(309, 511)
 
 [node name="Enemy2" parent="Enemies" unique_id=1349232255 instance=ExtResource("1_rvslj")]
-position = Vector2(267, 43)
+position = Vector2(694, 194)
 
 [node name="Enemy4" parent="Enemies" unique_id=262093985 instance=ExtResource("1_rvslj")]
-position = Vector2(328, 231)
+position = Vector2(834, 515)
 
 [node name="Enemy3" parent="Enemies" unique_id=541954079 instance=ExtResource("1_rvslj")]
 position = Vector2(77, 43)
 
 [node name="Player" parent="." unique_id=886771977 instance=ExtResource("2_0bbpv")]
-position = Vector2(181, 125)
+position = Vector2(509, 278)
+
+[node name="Items" type="Node2D" parent="." unique_id=1259776174]
+
+[node name="PillSpawnPoints" type="Node2D" parent="." unique_id=2114206628]
+
+[node name="Marker2D" type="Marker2D" parent="PillSpawnPoints" unique_id=198631313]
+position = Vector2(1006, 347)
+
+[node name="Marker2D2" type="Marker2D" parent="PillSpawnPoints" unique_id=1561805845]
+position = Vector2(704, 497)
+
+[node name="Marker2D3" type="Marker2D" parent="PillSpawnPoints" unique_id=1952418932]
+position = Vector2(116, 558)
+
+[node name="Marker2D4" type="Marker2D" parent="PillSpawnPoints" unique_id=103094020]
+position = Vector2(545, 59)
 
 [node name="DebugUI" type="CanvasLayer" parent="." unique_id=796483277]
 script = ExtResource("3_0bbpv")

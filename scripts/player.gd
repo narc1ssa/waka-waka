@@ -5,6 +5,10 @@ signal stage_display_name_changed(display_name)
 @export var base_speed := 140.0
 @export var stages: Array[StageData] = []
 
+# На какую стадию возвращается игрок после таблетки.
+# 1 - полное омоложение.
+@export var pill_target_stage := 1
+
 @onready var eat_area: Area2D = $EatArea
 
 var visual: Node2D
@@ -52,11 +56,21 @@ func _physics_process(delta: float) -> void:
 func _on_eat_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy"):
 		AgeManager.eat_enemy()
+		_consume_area(area)
 
-		if area.has_method("eat"):
-			area.eat()
-		else:
-			area.queue_free()
+	elif area.is_in_group("pill"):
+		AgeManager.eat_rejuvenating_pill(pill_target_stage)
+		_consume_area(area)
+
+
+func _consume_area(area: Area2D) -> void:
+	if not is_instance_valid(area):
+		return
+
+	if area.has_method("eat"):
+		area.eat()
+	else:
+		area.queue_free()
 
 
 func _on_stage_changed(new_stage: int) -> void:
