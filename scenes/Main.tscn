@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://cc1hllw7xxbj2" path="res://scripts/debug_ui.gd" id="3_0bbpv"]
 [ext_resource type="Texture2D" uid="uid://c6rvgpdgtlmk4" path="res://assets/map/map.png" id="3_c01mt"]
 [ext_resource type="Script" uid="uid://hd0tuum6us5" path="res://scripts/enemy_spawner.gd" id="4_nxtc6"]
+[ext_resource type="Script" uid="uid://q7gkm7odqlb4" path="res://scripts/pause_ui.gd" id="8_q8u5g"]
+[ext_resource type="Script" uid="uid://cobioeutkw7a7" path="res://scripts/game_over_ui.gd" id="9_lhr70"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vcsgt"]
 size = Vector2(1111, 39)
@@ -267,5 +269,82 @@ text = "Старость!"
 [node name="DeathLabel" type="Label" parent="DebugUI/VBoxContainer" unique_id=1305440372]
 layout_mode = 2
 text = "Игрок умер от старости"
+
+[node name="PauseUI" type="CanvasLayer" parent="." unique_id=974323536]
+script = ExtResource("8_q8u5g")
+
+[node name="PausePanel" type="Panel" parent="PauseUI" unique_id=1427718208]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseUI/PausePanel" unique_id=804168989]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -91.5
+offset_right = 180.0
+offset_bottom = 91.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseTitle" type="Label" parent="PauseUI/PausePanel/VBoxContainer" unique_id=384944059]
+layout_mode = 2
+text = "Пауза"
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="PauseUI/PausePanel/VBoxContainer" unique_id=52821970]
+layout_mode = 2
+text = "Продолжить"
+
+[node name="RestartButton" type="Button" parent="PauseUI/PausePanel/VBoxContainer" unique_id=901672076]
+layout_mode = 2
+text = "Заново"
+
+[node name="MenuButton" type="Button" parent="PauseUI/PausePanel/VBoxContainer" unique_id=963213765]
+layout_mode = 2
+text = "В меню"
+
+[node name="GameOverUI" type="CanvasLayer" parent="." unique_id=993204968]
+script = ExtResource("9_lhr70")
+
+[node name="GameOverPanel" type="Panel" parent="GameOverUI" unique_id=1183450050]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverUI/GameOverPanel" unique_id=827382042]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -46.5
+offset_right = 61.0
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverLabel" type="Label" parent="GameOverUI/GameOverPanel/VBoxContainer" unique_id=53868755]
+layout_mode = 2
+text = "Игра окончена"
+
+[node name="RestartButton" type="Button" parent="GameOverUI/GameOverPanel/VBoxContainer" unique_id=74688985]
+layout_mode = 2
+text = "Заново"
+
+[node name="MenuButton" type="Button" parent="GameOverUI/GameOverPanel/VBoxContainer" unique_id=944232996]
+layout_mode = 2
+text = "В меню"
 
 [editable path="Player"]

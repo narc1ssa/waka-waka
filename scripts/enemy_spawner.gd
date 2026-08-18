@@ -2,22 +2,12 @@ extends Node
 
 @export var enemy_scene: PackedScene
 
-# Какие анимации могут получать враги при спавне.
 @export var animation_names: Array[String] = []
-
-# Если заполнить, враги будут получать случайный цвет.
 @export var enemy_colors: Array[Color] = []
 
-# Сколько врагов создать сразу при старте.
 @export var initial_enemies := 5
-
-# Максимум врагов на уровне одновременно.
 @export var max_enemies := 10
-
-# Как часто пытаться доспавнить врага.
 @export var spawn_interval := 3.0
-
-# Не спавнить врагов ближе этого расстояния к игроку.
 @export var min_distance_from_player := 120.0
 
 var enemies_node: Node2D
@@ -47,6 +37,9 @@ func _spawn_initial() -> void:
 
 
 func _on_spawn_timer_timeout() -> void:
+	if not is_inside_tree():
+		return
+
 	var alive := get_tree().get_nodes_in_group("enemy").size()
 
 	if alive < max_enemies:
@@ -64,11 +57,19 @@ func _on_game_reset() -> void:
 
 	await get_tree().process_frame
 
+	# Если за это время сменили сцену, спавнер уже не в дереве.
+	# Тогда просто выходим и ничего не спавним.
+	if not is_inside_tree():
+		return
+
 	_spawn_initial()
 	spawn_timer.start()
 
 
 func spawn_enemy() -> void:
+	if not is_inside_tree():
+		return
+
 	if enemy_scene == null:
 		push_warning("Enemy scene is not assigned in EnemySpawner")
 		return
@@ -87,7 +88,6 @@ func spawn_enemy() -> void:
 
 	var chosen: Node2D = null
 
-	# Пытаемся найти точку подальше от игрока.
 	for attempt in range(8):
 		var point := points.pick_random() as Node2D
 
@@ -102,7 +102,6 @@ func spawn_enemy() -> void:
 			chosen = point
 			break
 
-	# Если далеко не нашли, спавним хотя бы где-то.
 	if chosen == null:
 		chosen = points.pick_random() as Node2D
 

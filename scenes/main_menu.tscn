@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://b8hprkren0rdc"]
+
+[ext_resource type="Script" uid="uid://dxxclwwqiecgv" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://bvv40xdxm61ic" path="res://assets/map/menu_background.png" id="2_ekxnf"]
+
+[node name="MainMenu" type="Control" unique_id=274975166]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekxnf")
+
+[node name="BackgroundImage" type="TextureRect" parent="." unique_id=1898325627]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ekxnf")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Background" type="ColorRect" parent="." unique_id=406696027]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.13188633, 0.06903109, 0.23024997, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=633408432]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.671
+anchor_top = 0.83300006
+anchor_right = 0.671
+anchor_bottom = 0.83300006
+offset_left = -547.1
+offset_top = -138.75006
+offset_right = -299.09998
+offset_bottom = 14.249939
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=1676461908]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "ПУСЯ"
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=47356218]
+layout_mode = 2
+text = "Играть"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=59295051]
+layout_mode = 2
+text = "Выйти"

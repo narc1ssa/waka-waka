@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
 signal stage_display_name_changed(display_name)
+signal death_finished()
 
 @export var base_speed := 140.0
 @export var stages: Array[StageData] = []
 
 # На какую стадию возвращается игрок после таблетки.
-# 1 - полное омоложение.
 @export var pill_target_stage := 1
 
 @onready var eat_area: Area2D = $EatArea
@@ -21,6 +21,7 @@ var current_stage_data: StageData = null
 var transition_tween: Tween
 
 var last_horizontal_direction := "right"
+var is_dead := false
 
 
 func _ready() -> void:
@@ -41,6 +42,9 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if is_dead:
+		return
+
 	var input_vector := Vector2.ZERO
 
 	input_vector.x = Input.get_axis("ui_left", "ui_right")
@@ -81,12 +85,59 @@ func _on_stage_changed(new_stage: int) -> void:
 
 
 func _on_player_died() -> void:
+	is_dead = true
+
 	set_physics_process(false)
+	velocity = Vector2.ZERO
+
+	if eat_area:
+		eat_area.monitoring = false
+
+	play_death_animation()
 
 
 func _on_game_reset() -> void:
+	is_dead = false
+
 	set_physics_process(true)
+
+	if eat_area:
+		eat_area.monitoring = true
+
 	apply_stage(AgeManager.stage)
+
+
+func play_death_animation() -> void:
+	if not animated_sprite or not animated_sprite.sprite_frames:
+		death_finished.emit()
+		return
+
+	var death_anim := ""
+
+	# Сначала ищем смерть для текущего возраста, например baby_death.
+	if current_stage_data and current_stage_data.animation_prefix != "":
+		var prefixed := current_stage_data.animation_prefix + "_death"
+
+		if animated_sprite.sprite_frames.has_animation(prefixed):
+			death_anim = prefixed
+
+	# Если нет, берём общую анимацию смерти.
+	if death_anim == "" and animated_sprite.sprite_frames.has_animation("death"):
+		death_anim = "death"
+
+	# Если анимации смерти вообще нет, просто сообщаем о конце.
+	if death_anim == "":
+		death_finished.emit()
+		return
+
+	if not animated_sprite.animation_finished.is_connected(_on_death_animation_finished):
+		animated_sprite.animation_finished.connect(_on_death_animation_finished)
+
+	animated_sprite.play(death_anim)
+
+
+func _on_death_animation_finished() -> void:
+	death_finished.emit()
 
 
 func apply_stage(new_stage: int) -> void:
@@ -118,8 +169,6 @@ func apply_stage(new_stage: int) -> void:
 			sprite.texture = data.texture
 
 	else:
-		# Временный fallback, если StageData ещё не назначены.
-		# Теперь он автоматически подстраивается под AgeManager.MAX_STAGE.
 		var max_index := AgeManager.MAX_STAGE - 1
 
 		if max_index < 1:
@@ -155,11 +204,13 @@ func apply_stage(new_stage: int) -> void:
 
 	stage_display_name_changed.emit(current_stage_name)
 
-	# Сразу обновляем анимацию после смены стадии.
 	update_animation(Vector2.ZERO)
 
 
 func update_animation(input_vector: Vector2) -> void:
+	if is_dead:
+		return
+
 	if not animated_sprite:
 		return
 
@@ -180,7 +231,6 @@ func update_animation(input_vector: Vector2) -> void:
 
 	var animation_name := find_best_animation(state, direction)
 
-	# Запасной вариант, если не нашли анимацию по префиксу.
 	if animation_name == "":
 		animation_name = current_stage_data.animation_name
 
@@ -258,7 +308,6 @@ func apply_flip(direction: String, animation_name: String) -> void:
 	if current_stage_data and not current_stage_data.use_horizontal_flip:
 		return
 
-	# Если уже есть отдельная анимация left/right, обычно flip не нужен.
 	if animation_name.contains("_left") or animation_name.contains("_right"):
 		animated_sprite.flip_h = false
 		return

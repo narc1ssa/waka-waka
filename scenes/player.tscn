@@ -7,11 +7,18 @@
 [ext_resource type="Resource" uid="uid://bgdkmpks2n1n5" path="res://data/stages/stage_03.tres" id="5_a8ls1"]
 [ext_resource type="Resource" uid="uid://c1oddhinfjsge" path="res://data/stages/stage_04.tres" id="6_qfm1y"]
 [ext_resource type="Resource" uid="uid://b3kkyf7qst4se" path="res://data/stages/stage_05.tres" id="7_fulsm"]
+[ext_resource type="Texture2D" uid="uid://m546av2pgjtt" path="res://assets/hero6/death1.png" id="8_4vfid"]
 [ext_resource type="Texture2D" uid="uid://ch143mvl3n8it" path="res://assets/hero2/11.png" id="8_fdfoy"]
 [ext_resource type="Texture2D" uid="uid://bnq5mklwxhcpr" path="res://assets/hero2/12.png" id="9_hhpqf"]
+[ext_resource type="Texture2D" uid="uid://cp2mlvhn67ov3" path="res://assets/hero6/death2.png" id="9_ljgr3"]
+[ext_resource type="Texture2D" uid="uid://flmyivltx0bp" path="res://assets/hero6/death3.png" id="10_fr8ja"]
 [ext_resource type="Texture2D" uid="uid://c5uq64no035hn" path="res://assets/hero2/13.png" id="10_g5jhy"]
+[ext_resource type="Texture2D" uid="uid://crtjpkbo3b5wp" path="res://assets/hero6/death4.png" id="11_gvmy4"]
 [ext_resource type="Texture2D" uid="uid://daqimske8175v" path="res://assets/hero2/14.png" id="11_holxr"]
+[ext_resource type="Texture2D" uid="uid://6777r13j0jw2" path="res://assets/hero6/death5.png" id="12_fcu33"]
 [ext_resource type="Texture2D" uid="uid://bpsxl0wd5ujtd" path="res://assets/hero2/01.png" id="13_a8ls1"]
+[ext_resource type="Texture2D" uid="uid://ckaitgfbxyae" path="res://assets/hero6/death6.png" id="13_qmsq4"]
+[ext_resource type="Texture2D" uid="uid://dnl4y5a5fo8g7" path="res://assets/hero6/death7.png" id="14_5vs2b"]
 [ext_resource type="Texture2D" uid="uid://b4w7fkwl03btq" path="res://assets/hero2/02.png" id="14_qfm1y"]
 [ext_resource type="Texture2D" uid="uid://c5goffqsl5mj6" path="res://assets/hero2/03.png" id="15_fulsm"]
 [ext_resource type="Texture2D" uid="uid://brie1y338mnxw" path="res://assets/hero2/05.png" id="16_4r5pv"]
@@ -87,6 +94,32 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bvp88"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_4vfid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ljgr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fr8ja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gvmy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fcu33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_qmsq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_5vs2b")
+}],
+"loop": 0,
+"name": &"death",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("8_fdfoy")
@@ -396,7 +429,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c01mt"]
 radius = 24.0
-height = 120.0
+height = 100.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 radius = 30.066593
@@ -413,7 +446,7 @@ stages = Array[ExtResource("2_jej6c")]([ExtResource("3_f1ej7"), ExtResource("4_o
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visual" unique_id=653797930]
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_bvp88")
-animation = &"stage_5_walk_right"
+animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=265808849]
 position = Vector2(0, 22)
