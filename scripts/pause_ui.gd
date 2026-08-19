@@ -9,9 +9,9 @@ func _ready() -> void:
 
 	pause_panel.visible = false
 
-	$PausePanel/VBoxContainer/ResumeButton.pressed.connect(_on_resume)
-	$PausePanel/VBoxContainer/RestartButton.pressed.connect(_on_restart)
-	$PausePanel/VBoxContainer/MenuButton.pressed.connect(_on_menu)
+	$PausePanel/ResumeButton.pressed.connect(_on_resume)
+	$PausePanel/RestartButton.pressed.connect(_on_restart)
+	$PausePanel/MenuButton.pressed.connect(_on_menu)
 
 
 func _unhandled_input(event: InputEvent) -> void:

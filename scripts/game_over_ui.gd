@@ -11,8 +11,8 @@ func _ready() -> void:
 	AgeManager.player_died_old_age.connect(_on_player_died)
 	AgeManager.game_reset.connect(_on_game_reset)
 
-	$GameOverPanel/VBoxContainer/RestartButton.pressed.connect(_on_restart)
-	$GameOverPanel/VBoxContainer/MenuButton.pressed.connect(_on_menu)
+	$GameOverPanel/RestartButton.pressed.connect(_on_restart)
+	$GameOverPanel/MenuButton.pressed.connect(_on_menu)
 
 
 func _on_player_died() -> void:

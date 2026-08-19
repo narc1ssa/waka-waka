@@ -2,8 +2,8 @@ extends Control
 
 
 func _ready() -> void:
-	$VBoxContainer/PlayButton.pressed.connect(_on_play)
-	$VBoxContainer/QuitButton.pressed.connect(_on_quit)
+	$PlayButton.pressed.connect(_on_play)
+	$QuitButton.pressed.connect(_on_quit)
 
 
 func _on_play() -> void:
