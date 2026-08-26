@@ -26,11 +26,11 @@ func _on_stage_changed(new_stage: int) -> void:
 
 
 func _on_total_changed(total: int) -> void:
-	total_label.text = "Съедено врагов: %d" % total
+	total_label.text = "Коты: %d / %d" % [total, AgeManager.WIN_TOTAL]
 
 
 func _on_old_age_started(time_limit: float) -> void:
-	warning_label.text = "Старость! Найди таблетку: %.1f сек." % time_limit
+	warning_label.text = "Коты скоро поглотят вас! Найди домик для котов: %.1f сек." % time_limit
 	warning_label.visible = true
 
 

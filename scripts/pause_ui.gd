@@ -16,7 +16,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
-		if AgeManager.state == AgeManager.State.DEAD:
+		if AgeManager.state == AgeManager.State.DEAD or AgeManager.state == AgeManager.State.WON:
 			return
 
 		if get_tree().paused:

@@ -19,14 +19,15 @@ run/size/viewport_height=1200
 [autoload]
 
 AgeManager="*uid://dq04o77nvukgy"
+AudioManager="*uid://m10pq2r12ul0"
 
 [display]
 
 window/size/viewport_width=1100
 window/size/viewport_height=750
+window/size/mode=3
 window/size/borderless=true
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [layer_names]
 
@@ -44,3 +45,4 @@ window/stretch/aspect="expand"
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.5405781, 0.30119675, 0.102872275, 1)

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://m10pq2r12ul0"]
+
+[ext_resource type="Script" uid="uid://twewkx3qw17c" path="res://scripts/audio_manager.gd" id="1_aoitu"]
+[ext_resource type="AudioStream" uid="uid://c7w0b254mbm1v" path="res://music/music_menu.mp3" id="2_njtn3"]
+[ext_resource type="AudioStream" uid="uid://dglq5de1fg0l4" path="res://music/music_level.mp3" id="3_kq7b2"]
+[ext_resource type="AudioStream" uid="uid://dlx7i85iht2j4" path="res://music/music_old_age.mp3" id="4_02gw7"]
+[ext_resource type="AudioStream" uid="uid://d2n1rcenv4x7o" path="res://music/sound_eat.mp3" id="5_ujhup"]
+[ext_resource type="AudioStream" uid="uid://xs2aqv3v7fl7" path="res://music/win.mp3" id="6_njtn3"]
+
+[node name="AudioManager" type="Node" unique_id=344248609]
+script = ExtResource("1_aoitu")
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=1749729172]
+stream = ExtResource("2_njtn3")
+volume_db = -5.0
+
+[node name="LevelMusic" type="AudioStreamPlayer" parent="." unique_id=530048274]
+stream = ExtResource("3_kq7b2")
+volume_db = -5.0
+
+[node name="OldAgeMusic" type="AudioStreamPlayer" parent="." unique_id=778648907]
+stream = ExtResource("4_02gw7")
+volume_db = -5.0
+
+[node name="EatSound" type="AudioStreamPlayer" parent="." unique_id=51404005]
+stream = ExtResource("5_ujhup")
+volume_db = -10.0
+
+[node name="WinMusic" type="AudioStreamPlayer" parent="." unique_id=232823757]
+stream = ExtResource("6_njtn3")
+volume_db = -5.0

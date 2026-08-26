@@ -6,16 +6,19 @@ signal old_age_started(time_limit)
 signal player_died_old_age()
 signal rejuvenated(new_stage)
 signal game_reset()
+signal victory()
 
 const KILLS_PER_STAGE := 10
 const MAX_STAGE := 5
 const OLD_AGE_TIME := 20.0
 const DEBUG_KEYS_ENABLED := true
+const WIN_TOTAL := 300
 
 enum State {
 	ALIVE,
 	OLD_AGE,
-	DEAD
+	DEAD,
+	WON
 }
 
 var stage := 1
@@ -54,8 +57,11 @@ func eat_enemy() -> void:
 
 	total_eaten += 1
 	eaten_in_stage += 1
-
 	total_eaten_changed.emit(total_eaten)
+
+	if total_eaten >= WIN_TOTAL:
+		_win()
+		return
 
 	if eaten_in_stage >= KILLS_PER_STAGE:
 		eaten_in_stage = 0
@@ -71,7 +77,7 @@ func eat_enemy() -> void:
 
 
 func eat_rejuvenating_pill(new_stage := 1) -> void:
-	if state == State.DEAD:
+	if state == State.DEAD or state == State.WON:
 		return
 
 	old_age_timer.stop()
@@ -109,3 +115,11 @@ func reset_game() -> void:
 	stage_changed.emit(stage)
 	total_eaten_changed.emit(total_eaten)
 	game_reset.emit()
+
+func _win() -> void:
+	if state == State.WON:
+		return
+
+	state = State.WON
+	old_age_timer.stop()
+	victory.emit()

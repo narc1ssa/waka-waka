@@ -25,7 +25,7 @@ func _ready() -> void:
 	add_child(spawn_timer)
 
 	AgeManager.game_reset.connect(_on_game_reset)
-	AgeManager.player_died_old_age.connect(_on_player_died)
+	AgeManager.victory.connect(_on_player_died)
 
 	spawn_timer.start()
 	_spawn_initial()

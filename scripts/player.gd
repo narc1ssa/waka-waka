@@ -61,12 +61,14 @@ func _physics_process(delta: float) -> void:
 func _on_eat_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("pill"):
 		AgeManager.eat_rejuvenating_pill(pill_target_stage)
+		AudioManager.play_eat_sfx()
 		_consume_area(area)
 
 
 func _on_eat_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
 		AgeManager.eat_enemy()
+		AudioManager.play_eat_sfx()
 		_consume_area(body)
 
 

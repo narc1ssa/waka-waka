@@ -33,8 +33,25 @@ func _ready() -> void:
 	AgeManager.stage_changed.connect(_on_stage_changed)
 	AgeManager.old_age_started.connect(_on_old_age_started)
 	AgeManager.game_reset.connect(_on_game_reset)
+	
+	AudioManager.play_level_music()
+
+	AgeManager.old_age_started.connect(_on_old_age_music)
+	AgeManager.rejuvenated.connect(_on_level_music)
+	AgeManager.game_reset.connect(_on_level_music)
+	AgeManager.player_died_old_age.connect(_on_death_music)
+
+func _on_old_age_music(_time_limit: float) -> void:
+	AudioManager.play_old_age_music()
 
 
+func _on_level_music(_a = null) -> void:
+	AudioManager.play_level_music()
+
+
+func _on_death_music() -> void:
+	AudioManager.stop_music()
+	
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == debug_spawn_key:
