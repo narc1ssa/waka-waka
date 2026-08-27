@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://d1j86gepgkb3b" path="res://assets/UI/btn_restart.png" id="15_1iba3"]
 [ext_resource type="Texture2D" uid="uid://b0xeib2h7lfek" path="res://assets/UI/btn_menu2_.png" id="15_yxlcp"]
 [ext_resource type="Texture2D" uid="uid://d0ffavl6ld0ns" path="res://assets/UI/btn_menu.png" id="16_yxlcp"]
+[ext_resource type="Texture2D" uid="uid://d254mpxvpiyvt" path="res://assets/map/gameover_background.png" id="17_2ofn6"]
 [ext_resource type="Texture2D" uid="uid://dop13t2yu8noj" path="res://assets/UI/btn_restart_.png" id="19_1iba3"]
 [ext_resource type="Texture2D" uid="uid://dtij6vd21sr4q" path="res://assets/UI/btn_menu_.png" id="20_ebg2g"]
 [ext_resource type="Script" uid="uid://lc0mu2wmhjmo" path="res://scripts/victory_ui.gd" id="22_ebg2g"]
@@ -295,6 +296,7 @@ theme_override_font_sizes/font_size = 16
 text = "Игрок был поглощен котами"
 
 [node name="PauseUI" type="CanvasLayer" parent="." unique_id=974323536]
+visible = false
 script = ExtResource("8_q8u5g")
 
 [node name="PausePanel" type="Panel" parent="PauseUI" unique_id=1427718208]
@@ -402,17 +404,22 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_bvp88")
 
-[node name="Dim" type="ColorRect" parent="GameOverUI/GameOverPanel" unique_id=870459461]
+[node name="Background" type="TextureRect" parent="GameOverUI/GameOverPanel" unique_id=1314786708]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 78.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 0.5058824)
+texture = ExtResource("17_2ofn6")
+expand_mode = 5
 
 [node name="TitleImage" type="TextureRect" parent="GameOverUI/GameOverPanel" unique_id=2057364020]
+visible = false
 custom_minimum_size = Vector2(500, 120)
 layout_mode = 0
 offset_left = 300.0
@@ -428,17 +435,10 @@ stretch_mode = 5
 [node name="RestartButton" type="TextureButton" parent="GameOverUI/GameOverPanel" unique_id=1658315117]
 custom_minimum_size = Vector2(300, 90)
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.523
-anchor_right = 0.5
-anchor_bottom = 0.523
-offset_left = -160.0
-offset_top = -45.25
-offset_right = 160.0
-offset_bottom = 44.75
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 133.0
+offset_top = 425.0
+offset_right = 453.0
+offset_bottom = 515.0
 size_flags_horizontal = 4
 size_flags_vertical = 6
 texture_normal = ExtResource("15_1iba3")
@@ -449,17 +449,10 @@ stretch_mode = 5
 [node name="MenuButton" type="TextureButton" parent="GameOverUI/GameOverPanel" unique_id=476961642]
 custom_minimum_size = Vector2(300, 90)
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.647
-anchor_right = 0.5
-anchor_bottom = 0.647
-offset_left = -160.0
-offset_top = -45.25
-offset_right = 160.0
-offset_bottom = 44.75
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 133.0
+offset_top = 520.0
+offset_right = 453.0
+offset_bottom = 610.0
 texture_normal = ExtResource("16_yxlcp")
 texture_hover = ExtResource("20_ebg2g")
 ignore_texture_size = true
@@ -475,16 +468,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_qppv5")
-
-[node name="Dim" type="ColorRect" parent="VictoryUI/VictoryPanel" unique_id=1026444957]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 0.49019608)
 
 [node name="TrophyImage" type="TextureRect" parent="VictoryUI/VictoryPanel" unique_id=1393220823]
 custom_minimum_size = Vector2(400, 400)
