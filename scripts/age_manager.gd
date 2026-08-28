@@ -10,7 +10,7 @@ signal victory()
 
 const KILLS_PER_STAGE := 10
 const MAX_STAGE := 5
-const OLD_AGE_TIME := 20.0
+const OLD_AGE_TIME := 60.0
 const DEBUG_KEYS_ENABLED := true
 const WIN_TOTAL := 300
 

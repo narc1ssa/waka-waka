@@ -23,8 +23,8 @@ AudioManager="*uid://m10pq2r12ul0"
 
 [display]
 
-window/size/viewport_width=1100
-window/size/viewport_height=750
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/size/mode=3
 window/size/borderless=true
 window/stretch/mode="canvas_items"

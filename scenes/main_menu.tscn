@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://b8hprkren0rdc"]
 
 [ext_resource type="Script" uid="uid://dxxclwwqiecgv" path="res://scripts/main_menu.gd" id="1_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://bvv40xdxm61ic" path="res://assets/map/menu_background.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://gw1uql5adv1r" path="res://assets/map/Max_a_убери_кнопки_и_надпи.png" id="2_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://csdv65e5jy48e" path="res://assets/UI/btn_quit.png" id="3_8ln24"]
+[ext_resource type="Texture2D" uid="uid://rmhq0s51ifsw" path="res://assets/map/Max_a_сделай_надпись_на_бе.png" id="3_oa1go"]
 [ext_resource type="Texture2D" uid="uid://m6emhe5x1uj0" path="res://assets/UI/btn_quit_.png" id="4_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://cnenl13tft17f" path="res://assets/UI/btn_play.png" id="5_oa1go"]
 [ext_resource type="Texture2D" uid="uid://d3lbm23nw7c0v" path="res://assets/UI/btn_play_.png" id="6_rtw2f"]
@@ -21,11 +22,28 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -77.0
+offset_top = -71.0
+offset_right = 79.0
+offset_bottom = 78.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ekxnf")
-expand_mode = 1
-stretch_mode = 6
+texture = ExtResource("2_rtw2f")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=29111301]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -342.0
+offset_right = 707.0
+offset_bottom = -41.0
+grow_vertical = 2
+texture = ExtResource("3_oa1go")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="Background" type="ColorRect" parent="." unique_id=406696027]
 visible = false
@@ -55,9 +73,10 @@ anchor_left = 0.2
 anchor_top = 0.62133336
 anchor_right = 0.44500002
 anchor_bottom = 0.73300004
-offset_top = -3.0517578e-05
-offset_right = 0.49996948
-offset_bottom = 0.25
+offset_left = -26.0
+offset_top = -147.36002
+offset_right = -25.500061
+offset_bottom = -143.76001
 size_flags_horizontal = 4
 texture_normal = ExtResource("3_8ln24")
 texture_pressed = ExtResource("4_rtw2f")
@@ -71,9 +90,10 @@ anchor_left = 0.209
 anchor_top = 0.73600006
 anchor_right = 0.43600002
 anchor_bottom = 0.836
-offset_left = 0.099990845
-offset_top = -6.1035156e-05
-offset_right = 0.3999939
+offset_left = -25.900024
+offset_top = -147.36005
+offset_right = -25.600037
+offset_bottom = -144.36005
 size_flags_horizontal = 4
 texture_normal = ExtResource("5_oa1go")
 texture_pressed = ExtResource("6_rtw2f")
