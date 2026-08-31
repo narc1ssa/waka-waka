@@ -7,9 +7,11 @@
 [ext_resource type="Script" uid="uid://cc1hllw7xxbj2" path="res://scripts/debug_ui.gd" id="3_0bbpv"]
 [ext_resource type="Texture2D" uid="uid://ldgtvg7bcmb1" path="res://assets/map/map_big.png" id="3_ebg2g"]
 [ext_resource type="Script" uid="uid://hd0tuum6us5" path="res://scripts/enemy_spawner.gd" id="4_nxtc6"]
+[ext_resource type="Texture2D" uid="uid://5vywil7yakfx" path="res://assets/UI/Max_a_сделай_кнопку_на_бел.png" id="8_2ofn6"]
 [ext_resource type="Script" uid="uid://q7gkm7odqlb4" path="res://scripts/pause_ui.gd" id="8_q8u5g"]
 [ext_resource type="Texture2D" uid="uid://djhnx8vtbm36f" path="res://assets/UI/pause_title.png" id="9_cvmbd"]
 [ext_resource type="Script" uid="uid://cobioeutkw7a7" path="res://scripts/game_over_ui.gd" id="9_lhr70"]
+[ext_resource type="Texture2D" uid="uid://cjvb3nt44mtf5" path="res://assets/UI/Max_a_сделай_кнопку_на_бел (1).png" id="9_xa025"]
 [ext_resource type="Texture2D" uid="uid://b178h7ieh1nlk" path="res://assets/UI/btn_resume.png" id="10_ft6cd"]
 [ext_resource type="Texture2D" uid="uid://b54vgnjnt03vi" path="res://assets/UI/btn_resume_.png" id="11_1nqs0"]
 [ext_resource type="Texture2D" uid="uid://daac2s5lrxwv6" path="res://assets/UI/btn_restart2.png" id="11_bb450"]
@@ -128,6 +130,15 @@ size = Vector2(231.13126, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_in2eo"]
 size = Vector2(277.5656, 44)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qppv5"]
+texture = ExtResource("8_2ofn6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8fd27"]
+texture = ExtResource("8_2ofn6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xa025"]
+texture = ExtResource("9_xa025")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bvp88"]
 
@@ -481,33 +492,60 @@ position = Vector2(2211, 2341)
 [node name="DebugUI" type="CanvasLayer" parent="." unique_id=796483277]
 script = ExtResource("3_0bbpv")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="DebugUI" unique_id=302478184]
-offset_right = 404.0
-offset_bottom = 104.0
-
-[node name="StageLabel" type="Label" parent="DebugUI/VBoxContainer" unique_id=1346878822]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.6, 0, 0.37999994, 1)
+[node name="StageLabel" type="Label" parent="DebugUI" unique_id=1346878822]
+offset_left = 21.0
+offset_top = 18.0
+offset_right = 283.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0.6, 0, 0.38039216, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_qppv5")
 text = "Стадия: 1/10"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="TotalLabel" type="Label" parent="DebugUI/VBoxContainer" unique_id=696613155]
-layout_mode = 2
+[node name="TotalLabel" type="Label" parent="DebugUI" unique_id=696613155]
+offset_left = 21.0
+offset_top = 79.0
+offset_right = 283.0
+offset_bottom = 138.0
 theme_override_colors/font_color = Color(0.6, 0, 0.38039216, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_8fd27")
 text = "Собрано котов: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="WarningLabel" type="Label" parent="DebugUI/VBoxContainer" unique_id=1150696281]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.6, 0, 0.38039216, 1)
+[node name="WarningLabel" type="Label" parent="DebugUI" unique_id=1150696281]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -191.5
+offset_top = 11.0
+offset_right = 191.5
+offset_bottom = 85.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(18.892157, 9.553275, 9.7089205, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_xa025")
 text = "Скоро вас поглотят коты!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="DeathLabel" type="Label" parent="DebugUI/VBoxContainer" unique_id=1305440372]
-layout_mode = 2
+[node name="DeathLabel" type="Label" parent="DebugUI" unique_id=1305440372]
+visible = false
+offset_left = 21.0
+offset_top = 169.0
+offset_right = 425.0
+offset_bottom = 192.0
 theme_override_colors/font_color = Color(0.46343005, 0.27897936, 0.21138081, 1)
 theme_override_colors/font_shadow_color = Color(18.892157, 18.892157, 18.892157, 0.7529412)
 theme_override_font_sizes/font_size = 16
 text = "Игрок был поглощен котами"
 
 [node name="PauseUI" type="CanvasLayer" parent="." unique_id=974323536]
+visible = false
 script = ExtResource("8_q8u5g")
 
 [node name="PausePanel" type="Panel" parent="PauseUI" unique_id=1427718208]
@@ -605,6 +643,7 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="GameOverUI" type="CanvasLayer" parent="." unique_id=993204968]
+visible = false
 script = ExtResource("9_lhr70")
 
 [node name="GameOverPanel" type="Panel" parent="GameOverUI" unique_id=1183450050]

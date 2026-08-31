@@ -1,9 +1,9 @@
 extends CanvasLayer
 
-@onready var stage_label: Label = $VBoxContainer/StageLabel
-@onready var total_label: Label = $VBoxContainer/TotalLabel
-@onready var warning_label: Label = $VBoxContainer/WarningLabel
-@onready var death_label: Label = $VBoxContainer/DeathLabel
+@onready var stage_label: Label = $StageLabel
+@onready var total_label: Label = $TotalLabel
+@onready var warning_label: Label = $WarningLabel
+@onready var death_label: Label = $DeathLabel
 
 var current_time_limit := 0.0
 var is_warning_active := false
