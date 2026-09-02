@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://uj7qofnynoos"]
+
+[ext_resource type="Script" uid="uid://vv46lc2j4wrc" path="res://scripts/rare_enemy.gd" id="1_yyr05"]
+[ext_resource type="SpriteFrames" uid="uid://0ctlw2g74wpj" path="res://assets/enemies/rare_enemies.tres" id="2_yyr05"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yyr05"]
+radius = 149.96666
+
+[node name="RareEnemy" type="CharacterBody2D" unique_id=1571824620]
+scale = Vector2(0.2, 0.2)
+collision_layer = 2
+collision_mask = 8
+script = ExtResource("1_yyr05")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1160514461]
+sprite_frames = ExtResource("2_yyr05")
+animation = &"enemy5_idle"
+frame = 1
+frame_progress = 0.21276766
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1974907189]
+shape = SubResource("CircleShape2D_yyr05")

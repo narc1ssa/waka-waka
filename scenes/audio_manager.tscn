@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dlx7i85iht2j4" path="res://music/music_old_age.mp3" id="4_02gw7"]
 [ext_resource type="AudioStream" uid="uid://d2n1rcenv4x7o" path="res://music/sound_eat.mp3" id="5_ujhup"]
 [ext_resource type="AudioStream" uid="uid://xs2aqv3v7fl7" path="res://music/win.mp3" id="6_njtn3"]
+[ext_resource type="AudioStream" uid="uid://crths1db4pnpb" path="res://music/chime.wav" id="7_kq7b2"]
 
 [node name="AudioManager" type="Node" unique_id=344248609]
 script = ExtResource("1_aoitu")
@@ -29,3 +30,6 @@ volume_db = -10.0
 [node name="WinMusic" type="AudioStreamPlayer" parent="." unique_id=232823757]
 stream = ExtResource("6_njtn3")
 volume_db = -5.0
+
+[node name="RareSpawnSound" type="AudioStreamPlayer" parent="." unique_id=255232533]
+stream = ExtResource("7_kq7b2")

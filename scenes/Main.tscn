@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://dtij6vd21sr4q" path="res://assets/UI/btn_menu_.png" id="20_ebg2g"]
 [ext_resource type="Script" uid="uid://lc0mu2wmhjmo" path="res://scripts/victory_ui.gd" id="22_ebg2g"]
 [ext_resource type="Texture2D" uid="uid://ce1r1iosjhjvk" path="res://assets/UI/Max_a_замени_фон_на_другой.png" id="22_yxlcp"]
+[ext_resource type="PackedScene" uid="uid://dgpccibnevy2t" path="res://scenes/rare_enemy_spawner.tscn" id="26_36rkl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vcsgt"]
 size = Vector2(2566.5, 42.5)
@@ -545,7 +546,6 @@ theme_override_font_sizes/font_size = 16
 text = "Игрок был поглощен котами"
 
 [node name="PauseUI" type="CanvasLayer" parent="." unique_id=974323536]
-visible = false
 script = ExtResource("8_q8u5g")
 
 [node name="PausePanel" type="Panel" parent="PauseUI" unique_id=1427718208]
@@ -643,7 +643,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="GameOverUI" type="CanvasLayer" parent="." unique_id=993204968]
-visible = false
 script = ExtResource("9_lhr70")
 
 [node name="GameOverPanel" type="Panel" parent="GameOverUI" unique_id=1183450050]
@@ -699,7 +698,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="VictoryUI" type="CanvasLayer" parent="." unique_id=1223769828]
-visible = false
 script = ExtResource("22_ebg2g")
 
 [node name="VictoryPanel" type="Panel" parent="VictoryUI" unique_id=1782770002]
@@ -766,4 +764,11 @@ texture_normal = ExtResource("12_nfivy")
 texture_hover = ExtResource("15_yxlcp")
 stretch_mode = 5
 
+[node name="RareEnemySpawner" parent="." unique_id=397771721 instance=ExtResource("26_36rkl")]
+animation_names = Array[String](["enemy5_idle"])
+
+[node name="SpawnTimer" parent="RareEnemySpawner" index="0" unique_id=181853877]
+autostart = true
+
 [editable path="Player"]
+[editable path="RareEnemySpawner"]

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dgpccibnevy2t"]
+
+[ext_resource type="Script" uid="uid://by55rqt5cpw73" path="res://scripts/rare_enemy_spawner.gd" id="1_45221"]
+[ext_resource type="PackedScene" uid="uid://uj7qofnynoos" path="res://scenes/rare_enemy.tscn" id="2_osvfe"]
+
+[node name="RareEnemySpawner" type="Node" unique_id=397771721]
+script = ExtResource("1_45221")
+rare_enemy_scene = ExtResource("2_osvfe")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=181853877]

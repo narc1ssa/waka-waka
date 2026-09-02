@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://0ctlw2g74wpj"]
+
+[ext_resource type="Texture2D" uid="uid://cp6db4071qx4y" path="res://assets/enemies/enemy5_1.png" id="1_jilgx"]
+[ext_resource type="Texture2D" uid="uid://duo86uow6mkdh" path="res://assets/enemies/enemy5_2.png" id="2_wmiql"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jilgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wmiql")
+}],
+"loop": 1,
+"name": &"enemy5_idle",
+"speed": 2.0
+}]

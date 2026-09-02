@@ -5,10 +5,15 @@ extends Node
 @onready var old_age_music: AudioStreamPlayer = $OldAgeMusic
 @onready var eat_sound: AudioStreamPlayer = $EatSound
 @onready var win_music: AudioStreamPlayer = $WinMusic
+@onready var rare_spawn_sound: AudioStreamPlayer = $RareSpawnSound
 
 var current_music: AudioStreamPlayer = null
 
-
+func play_rare_spawn_sfx() -> void:
+	if rare_spawn_sound.stream == null:
+		return
+	rare_spawn_sound.play()
+	
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	stop_music()
