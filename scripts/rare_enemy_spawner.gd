@@ -11,6 +11,7 @@ extends Node
 
 # Не спавнить ближе к игроку
 @export var min_distance_from_player := 200.0
+@export var rare_enemy_image: Texture2D
 
 var spawn_timer: Timer
 
@@ -90,6 +91,16 @@ func spawn_rare_enemy() -> void:
 
 
 func _on_rare_eaten(value: int) -> void:
-	# Даём бонус
+	print(" _on_rare_eaten вызван! value = ", value)
+	
 	for i in range(value):
 		AgeManager.eat_enemy()
+	
+	var info_ui := get_tree().get_first_node_in_group("rare_info_ui") as CanvasLayer
+	print("🔍 info_ui найден: ", info_ui != null)
+	
+	if info_ui and info_ui.has_method("show_info"):
+		print("📢 Вызываю show_info...")
+		info_ui.show_info("Редкий кот!", value)
+	else:
+		push_warning("UI не найден или нет метода show_info!")

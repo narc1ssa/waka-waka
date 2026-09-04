@@ -67,6 +67,7 @@ func _on_eat_area_area_entered(area: Area2D) -> void:
 
 func _on_eat_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
+		print("🐱 Игрок поймал врага: ", body.name)
 		AgeManager.eat_enemy()
 		AudioManager.play_eat_sfx()
 		_consume_area(body)

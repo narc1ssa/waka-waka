@@ -26,6 +26,7 @@
 [ext_resource type="Script" uid="uid://lc0mu2wmhjmo" path="res://scripts/victory_ui.gd" id="22_ebg2g"]
 [ext_resource type="Texture2D" uid="uid://ce1r1iosjhjvk" path="res://assets/UI/Max_a_замени_фон_на_другой.png" id="22_yxlcp"]
 [ext_resource type="PackedScene" uid="uid://dgpccibnevy2t" path="res://scenes/rare_enemy_spawner.tscn" id="26_36rkl"]
+[ext_resource type="PackedScene" uid="uid://bmsk0roscdhxj" path="res://scenes/rare_enemy_info_ui.tscn" id="27_fs0b5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vcsgt"]
 size = Vector2(2566.5, 42.5)
@@ -765,10 +766,7 @@ texture_hover = ExtResource("15_yxlcp")
 stretch_mode = 5
 
 [node name="RareEnemySpawner" parent="." unique_id=397771721 instance=ExtResource("26_36rkl")]
-animation_names = Array[String](["enemy5_idle"])
 
-[node name="SpawnTimer" parent="RareEnemySpawner" index="0" unique_id=181853877]
-autostart = true
+[node name="RareEnemyInfoUI" parent="." unique_id=927427674 instance=ExtResource("27_fs0b5")]
 
 [editable path="Player"]
-[editable path="RareEnemySpawner"]

@@ -15,8 +15,8 @@ var direction_timer := 0.0
 
 
 func _ready() -> void:
-	add_to_group("enemy")
-	add_to_group("rare_enemy")
+	add_to_group("enemy")      # <- Обязательно!
+	add_to_group("rare_enemy") # <- Для подсчёта
 
 	animated_sprite = get_node_or_null("AnimatedSprite2D")
 
@@ -26,6 +26,7 @@ func _ready() -> void:
 	direction_timer = randf_range(min_direction_time, max_direction_time)
 
 	start_glow()
+	print("✅ Редкий враг создан, группы: enemy + rare_enemy")
 
 
 func _physics_process(delta: float) -> void:
@@ -96,5 +97,6 @@ func start_glow() -> void:
 
 
 func eat() -> void:
+	print("🎯 eat() вызван! reward = ", reward)
 	rare_eaten.emit(reward)
 	queue_free()
