@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhb85n303qq11"
-path="res://.godot/imported/Max_a_на_первом_фото_помен.png-1b938e7b42a8b0eeb7e7c7a0240914a3.ctex"
+uid="uid://bn8eudj3ckk7m"
+path="res://.godot/imported/enemy3_6.png-f75477d14d3959888838500a55c42edf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/Max_a_на_первом_фото_помен.png"
-dest_files=["res://.godot/imported/Max_a_на_первом_фото_помен.png-1b938e7b42a8b0eeb7e7c7a0240914a3.ctex"]
+source_file="res://assets/rare_enemies/enemy3_6.png"
+dest_files=["res://.godot/imported/enemy3_6.png-f75477d14d3959888838500a55c42edf.ctex"]
 
 [params]
 

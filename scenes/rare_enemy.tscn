@@ -13,9 +13,7 @@ script = ExtResource("1_yyr05")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1160514461]
 sprite_frames = ExtResource("2_yyr05")
-animation = &"enemy5_idle"
-frame = 1
-frame_progress = 0.21276766
+animation = &"rare_enemy3_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1974907189]
 shape = SubResource("CircleShape2D_yyr05")

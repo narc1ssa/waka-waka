@@ -5,38 +5,52 @@ extends CanvasLayer
 @onready var info_image: TextureRect = $InfoPanel/InfoImage
 @onready var info_text: Label = $InfoPanel/InfoText
 
-var auto_close_timer: Timer
 var is_visible := false
 
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
-	add_to_group("rare_info_ui")  # <- ДОБАВЬ ЭТУ СТРОКУ!
+	add_to_group("rare_info_ui")
 	
 	info_panel.visible = false
 	
-	close_button.pressed.connect(_on_close)
+	var dim := get_node_or_null("InfoPanel/Dim") as ColorRect
+	if dim:
+		dim.mouse_filter = Control.MOUSE_FILTER_STOP
+		dim.gui_input.connect(_on_dim_clicked)
 	
-	# Таймер автозакрытия
-	auto_close_timer = Timer.new()
-	auto_close_timer.wait_time = 30.0
-	auto_close_timer.one_shot = true
-	auto_close_timer.timeout.connect(_on_close)
-	add_child(auto_close_timer)
+	if close_button:
+		close_button.pressed.connect(_on_close)
 
 
+# Новая функция для работы с конфигом
+func show_info_with_config(config: RareEnemyConfig) -> void:
+	# Устанавливаем картинку КОНКРЕТНОГО врага
+	info_image.texture = config.enemy_image
+	
+	# Устанавливаем текст
+	info_text.text = "%s\n+%d котов!" % [config.info_text, config.reward]
+	
+	info_panel.visible = true
+	is_visible = true
+	
+	get_tree().paused = true
+
+
+# Старая функция (для совместимости)
 func show_info(text: String, reward: int) -> void:
-	print("📺 show_info вызван! text = ", text, ", reward = ", reward)
-	
 	info_text.text = "%s\n+%d котов!" % [text, reward]
 	
 	info_panel.visible = true
 	is_visible = true
 	
 	get_tree().paused = true
-	
-	print("📺 info_panel.visible = ", info_panel.visible)
+
+
+func _on_dim_clicked(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		_on_close()
 
 
 func _on_close() -> void:
@@ -47,4 +61,3 @@ func _on_close() -> void:
 	is_visible = false
 	
 	get_tree().paused = false
-	auto_close_timer.stop()

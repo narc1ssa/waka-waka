@@ -1,10 +1,20 @@
 [gd_scene format=3 uid="uid://dgpccibnevy2t"]
 
 [ext_resource type="Script" uid="uid://by55rqt5cpw73" path="res://scripts/rare_enemy_spawner.gd" id="1_45221"]
-[ext_resource type="PackedScene" uid="uid://uj7qofnynoos" path="res://scenes/rare_enemy.tscn" id="2_osvfe"]
+[ext_resource type="Script" uid="uid://27wqffcemtvr" path="res://scripts/rare_enemy_config.gd" id="2_vw46w"]
+[ext_resource type="Resource" uid="uid://d1rjopxyuexpk" path="res://assets/enemies/rare_enemy_1_config.tres" id="3_3a3vj"]
+[ext_resource type="Resource" uid="uid://wsppownadpie" path="res://assets/enemies/rare_enemy_2_config.tres" id="4_70orq"]
+[ext_resource type="Resource" uid="uid://csldnirdp2yqh" path="res://assets/enemies/rare_enemy_3_config.tres" id="5_6wfb7"]
+[ext_resource type="Resource" uid="uid://c6rfs71w571nt" path="res://assets/enemies/rare_enemy_4_config.tres" id="6_2mug6"]
+[ext_resource type="Resource" uid="uid://p0yqws0k6rof" path="res://assets/enemies/rare_enemy_5_config.tres" id="7_o6jje"]
+[ext_resource type="Resource" uid="uid://dlwby7j0mvylg" path="res://assets/enemies/rare_enemy_6_config.tres" id="8_yqg3c"]
+[ext_resource type="Resource" uid="uid://pe1ghdnxwysb" path="res://assets/enemies/rare_enemy_7_config.tres" id="9_lr6a8"]
 
 [node name="RareEnemySpawner" type="Node" unique_id=397771721]
 script = ExtResource("1_45221")
-rare_enemy_scene = ExtResource("2_osvfe")
+enemy_configs = Array[ExtResource("2_vw46w")]([ExtResource("3_3a3vj"), ExtResource("4_70orq"), ExtResource("5_6wfb7"), ExtResource("6_2mug6"), ExtResource("7_o6jje"), ExtResource("8_yqg3c"), ExtResource("9_lr6a8")])
+spawn_interval = 5.0
+max_rare_enemies = 20
+min_distance_from_player = 10.0
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=181853877]

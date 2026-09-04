@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bmsk0roscdhxj"]
 
 [ext_resource type="Script" uid="uid://co3utpcb8r7c4" path="res://scripts/rare_enemy_info_ui.gd" id="1_yqwlb"]
-[ext_resource type="Texture2D" uid="uid://b0gv1twsyy7cy" path="res://assets/rare_enemies/01_.png" id="2_56ycf"]
 [ext_resource type="Texture2D" uid="uid://t52qgnarjxu7" path="res://assets/rare_enemies/кнопка.png" id="3_4yduc"]
 [ext_resource type="Texture2D" uid="uid://dy8ajokpb8f7a" path="res://assets/rare_enemies/кнопка_.png" id="4_x3iad"]
 
@@ -34,7 +33,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_56ycf")
 expand_mode = 1
 
 [node name="InfoText" type="Label" parent="InfoPanel" unique_id=1457494048]

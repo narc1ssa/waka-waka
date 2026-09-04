@@ -1,17 +1,10 @@
 extends Node
 
-@export var rare_enemy_scene: PackedScene
-@export var animation_names: Array[String] = []
+@export var enemy_configs: Array[RareEnemyConfig] = []
 
-# Как часто спавнить редкого врага (в секундах)
-@export var spawn_interval := 5.0
-
-# Максимум редких врагов на карте
-@export var max_rare_enemies := 2
-
-# Не спавнить ближе к игроку
-@export var min_distance_from_player := 200.0
-@export var rare_enemy_image: Texture2D
+@export var spawn_interval := 3.0
+@export var max_rare_enemies := 20
+@export var min_distance_from_player := 20.0
 
 var spawn_timer: Timer
 
@@ -30,9 +23,8 @@ func _ready() -> void:
 	spawn_timer.timeout.connect(_on_spawn_timer_timeout)
 	spawn_timer.start()
 
-	print("RareEnemySpawner: таймер запущен, интервал = ", spawn_interval)
 
-
+# ЭТА ФУНКЦИЯ ОТСУТСТВУЕТ - ДОБАВЬ ЕЁ!
 func _on_spawn_timer_timeout() -> void:
 	var alive := get_tree().get_nodes_in_group("rare_enemy").size()
 
@@ -41,14 +33,20 @@ func _on_spawn_timer_timeout() -> void:
 
 
 func spawn_rare_enemy() -> void:
-	if rare_enemy_scene == null:
+	if enemy_configs.is_empty():
+		push_warning("Нет конфигураций редких врагов!")
+		return
+
+	var config := enemy_configs.pick_random() as RareEnemyConfig
+
+	if config == null or config.enemy_scene == null:
+		push_warning("Конфигурация или сцена врага не назначена!")
 		return
 
 	var player := get_tree().get_first_node_in_group("player")
 	if player == null:
 		return
 
-	# Выбираем случайную точку спавна (используем те же точки, что и обычные враги)
 	var spawn_points := get_node_or_null("../EnemySpawnPoints")
 	if spawn_points == null:
 		return
@@ -74,33 +72,32 @@ func spawn_rare_enemy() -> void:
 	if chosen == null:
 		return
 
-	var enemy = rare_enemy_scene.instantiate()
+	# Создаём врага
+	var enemy = config.enemy_scene.instantiate()
 
-	if animation_names.size() > 0:
-		enemy.animation_name = animation_names[randi() % animation_names.size()]
+	# Применяем анимацию из конфига
+	if config.animation_name != "":
+		if enemy.has_node("AnimatedSprite2D"):
+			var sprite = enemy.get_node("AnimatedSprite2D")
+			if sprite.sprite_frames and sprite.sprite_frames.has_animation(config.animation_name):
+				sprite.play(config.animation_name)
+				print("Анимация: ", config.animation_name)
 
-	# Подключаем сигнал награды
+	# Подключаем сигнал
 	if enemy.has_signal("rare_eaten"):
-		enemy.rare_eaten.connect(_on_rare_eaten)
+		enemy.rare_eaten.connect(func(value): _on_rare_eaten(value, config))
 
-	get_parent().add_child(enemy)
+	get_tree().current_scene.add_child(enemy)
 	enemy.global_position = chosen.global_position
 
-	# Звук появления редкого врага
-	AudioManager.play_rare_spawn_sfx()
+	print("Заспавнен редкий враг: ", config.info_text)
 
 
-func _on_rare_eaten(value: int) -> void:
-	print(" _on_rare_eaten вызван! value = ", value)
-	
+func _on_rare_eaten(value: int, config: RareEnemyConfig) -> void:
 	for i in range(value):
 		AgeManager.eat_enemy()
-	
+
 	var info_ui := get_tree().get_first_node_in_group("rare_info_ui") as CanvasLayer
-	print("🔍 info_ui найден: ", info_ui != null)
-	
-	if info_ui and info_ui.has_method("show_info"):
-		print("📢 Вызываю show_info...")
-		info_ui.show_info("Редкий кот!", value)
-	else:
-		push_warning("UI не найден или нет метода show_info!")
+
+	if info_ui and info_ui.has_method("show_info_with_config"):
+		info_ui.show_info_with_config(config)
