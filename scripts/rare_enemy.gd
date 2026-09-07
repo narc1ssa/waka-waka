@@ -2,11 +2,15 @@ extends CharacterBody2D
 
 signal rare_eaten(value: int)
 
-@export var animation_name := ""
+# Переменные для получения данных от спавнера
+@export var forced_animation_name: String = ""
+@export var forced_color: Color = Color.WHITE
+
+# Старые переменные (как запасной вариант)
+@export var animation_name: String = ""
 @export var move_speed := 80.0
 @export var min_direction_time := 0.8
 @export var max_direction_time := 2.5
-
 @export var reward := 5
 
 var animated_sprite: AnimatedSprite2D
@@ -15,11 +19,12 @@ var direction_timer := 0.0
 
 
 func _ready() -> void:
-	add_to_group("enemy")      # <- Обязательно!
-	add_to_group("rare_enemy") # <- Для подсчёта
+	add_to_group("enemy")
+	add_to_group("rare_enemy")
 
 	animated_sprite = get_node_or_null("AnimatedSprite2D")
 
+	# Применяем внешний вид сразу при создании
 	apply_appearance()
 
 	direction = random_direction()
@@ -55,29 +60,36 @@ func random_direction() -> Vector2:
 
 
 func apply_appearance() -> void:
-	# Убираем золотой оттенок, оставляем белый
-	modulate = Color.WHITE
+	# 1. Применяем цвет, переданный от спавнера
+	modulate = forced_color
 
-	if not animated_sprite:
+	if not animated_sprite or not animated_sprite.sprite_frames:
 		return
 
-	if not animated_sprite.sprite_frames:
-		return
+	# 2. Определяем, какую анимацию играть
+	var anim_to_play = forced_animation_name
+	
+	# Если спавнер не передал анимацию, пробуем взять из старых настроек
+	if anim_to_play == "":
+		anim_to_play = animation_name
 
-	if animation_name != "":
-		if animated_sprite.sprite_frames.has_animation(animation_name):
-			animated_sprite.play(animation_name)
-	else:
+	# Если всё ещё пусто, берём самую первую доступную в ресурсе
+	if anim_to_play == "":
 		var names := animated_sprite.sprite_frames.get_animation_names()
 		if names.size() > 0:
-			animated_sprite.play(names[0])
+			anim_to_play = names[0]
+
+	# Запускаем анимацию
+	if anim_to_play != "" and animated_sprite.sprite_frames.has_animation(anim_to_play):
+		animated_sprite.play(anim_to_play)
+		print("🎬 Враг внутри себя запустил анимацию: ", anim_to_play)
 
 
 func start_glow() -> void:
 	if not animated_sprite:
 		return
 
-	# Пульсация размером вместо мигания цветом
+	# Пульсация размером
 	var tween := create_tween()
 	tween.set_loops()
 	

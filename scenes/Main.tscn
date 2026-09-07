@@ -765,10 +765,8 @@ texture_normal = ExtResource("12_nfivy")
 texture_hover = ExtResource("15_yxlcp")
 stretch_mode = 5
 
+[node name="RareEnemySpawner" parent="." unique_id=397771721 instance=ExtResource("26_36rkl")]
+
 [node name="RareEnemyInfoUI" parent="." unique_id=927427674 instance=ExtResource("27_fs0b5")]
 
-[node name="RareEnemySpawner" parent="." unique_id=397771721 instance=ExtResource("26_36rkl")]
-max_rare_enemies = 10
-
 [editable path="Player"]
-[editable path="RareEnemySpawner"]

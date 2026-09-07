@@ -22,9 +22,15 @@ func _ready() -> void:
 
 	spawn_timer.timeout.connect(_on_spawn_timer_timeout)
 	spawn_timer.start()
+	
+	print("=== RareEnemySpawner готов ===")
+	print("Количество конфигов: ", enemy_configs.size())
+	for i in range(enemy_configs.size()):
+		var cfg = enemy_configs[i]
+		if cfg:
+			print("  Конфиг ", i, ": ", cfg.info_text, " | Анимация: '", cfg.animation_name, "'")
 
 
-# ЭТА ФУНКЦИЯ ОТСУТСТВУЕТ - ДОБАВЬ ЕЁ!
 func _on_spawn_timer_timeout() -> void:
 	var alive := get_tree().get_nodes_in_group("rare_enemy").size()
 
@@ -72,28 +78,32 @@ func spawn_rare_enemy() -> void:
 	if chosen == null:
 		return
 
-	# Создаём врага
-	var enemy = config.enemy_scene.instantiate()
+	# 1. Создаём врага
+	var enemy = config.enemy_scene.instantiate() as CharacterBody2D
 
-	# Применяем анимацию из конфига
-	if config.animation_name != "":
-		if enemy.has_node("AnimatedSprite2D"):
-			var sprite = enemy.get_node("AnimatedSprite2D")
-			if sprite.sprite_frames and sprite.sprite_frames.has_animation(config.animation_name):
-				sprite.play(config.animation_name)
-				print("Анимация: ", config.animation_name)
+	# 2. ПЕРЕДАЁМ ДАННЫЕ ИЗ КОНФИГА ПРЯМО В ПЕРЕМЕННЫЕ ВРАГА
+	enemy.forced_animation_name = config.animation_name
+	
+	enemy.forced_color = Color.WHITE
 
-	# Подключаем сигнал
+	# 3. Подключаем сигнал
 	if enemy.has_signal("rare_eaten"):
 		enemy.rare_eaten.connect(func(value): _on_rare_eaten(value, config))
 
+	# 4. Добавляем на сцену
 	get_tree().current_scene.add_child(enemy)
 	enemy.global_position = chosen.global_position
 
-	print("Заспавнен редкий враг: ", config.info_text)
+	print("\n✅ Заспавнен редкий враг: ", config.info_text)
+	print("   Анимация: ", config.animation_name)
+	print("   Цвет: ", enemy.forced_color)
 
 
 func _on_rare_eaten(value: int, config: RareEnemyConfig) -> void:
+	print("\n=== РЕДКИЙ ВРАГ ПОЙМАН ===")
+	print("Конфиг: ", config.info_text)
+	print("Награда: ", value)
+	
 	for i in range(value):
 		AgeManager.eat_enemy()
 
@@ -101,3 +111,6 @@ func _on_rare_eaten(value: int, config: RareEnemyConfig) -> void:
 
 	if info_ui and info_ui.has_method("show_info_with_config"):
 		info_ui.show_info_with_config(config)
+		print("✅ Карточка показана")
+	else:
+		print("❌ UI не найден!")

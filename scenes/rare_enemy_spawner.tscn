@@ -13,8 +13,5 @@
 [node name="RareEnemySpawner" type="Node" unique_id=397771721]
 script = ExtResource("1_45221")
 enemy_configs = Array[ExtResource("2_vw46w")]([ExtResource("3_3a3vj"), ExtResource("4_70orq"), ExtResource("5_6wfb7"), ExtResource("6_2mug6"), ExtResource("7_o6jje"), ExtResource("8_yqg3c"), ExtResource("9_lr6a8")])
-spawn_interval = 5.0
-max_rare_enemies = 20
-min_distance_from_player = 10.0
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=181853877]
