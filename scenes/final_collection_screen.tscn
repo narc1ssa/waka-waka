@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://bhxli1rflhu8n"]
+
+[ext_resource type="Script" uid="uid://clto3dxrfan27" path="res://scripts/final_collection_screen.gd" id="1_l5tda"]
+[ext_resource type="Texture2D" uid="uid://ctu1m8o5yjske" path="res://assets/UI/Max_a_поменяй_первое_фото_дырки_вопросы.jpg" id="3_y64cg"]
+[ext_resource type="Texture2D" uid="uid://crjpcc7ankmde" path="res://assets/rare_enemies/01_found.png" id="4_okjab"]
+[ext_resource type="Texture2D" uid="uid://d0nf2hya4cdxp" path="res://assets/rare_enemies/02_found.png" id="5_ynt0f"]
+[ext_resource type="Texture2D" uid="uid://ct34idrwu37dg" path="res://assets/rare_enemies/03_found.png" id="6_5tvdx"]
+[ext_resource type="Texture2D" uid="uid://byswfbcwufja0" path="res://assets/rare_enemies/04_found.png" id="7_f1mjc"]
+[ext_resource type="Texture2D" uid="uid://bnwhe4cwwa2hy" path="res://assets/rare_enemies/05_found.png" id="8_1hj8k"]
+[ext_resource type="Texture2D" uid="uid://fljnve6ddg7e" path="res://assets/rare_enemies/06_found.png" id="9_rqbhk"]
+[ext_resource type="Texture2D" uid="uid://bfjfpeia4hfun" path="res://assets/rare_enemies/07_found.png" id="10_ojyxu"]
+
+[node name="FinalCollectionScreen" type="CanvasLayer" unique_id=663275249]
+script = ExtResource("1_l5tda")
+cat_found_textures = Array[Texture2D]([ExtResource("4_okjab"), ExtResource("5_ynt0f"), ExtResource("6_5tvdx"), ExtResource("7_f1mjc"), ExtResource("8_1hj8k"), ExtResource("9_rqbhk"), ExtResource("10_ojyxu")])
+
+[node name="Background" type="TextureRect" parent="." unique_id=924913478]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_y64cg")
+stretch_mode = 2
+
+[node name="CatSlot1" type="TextureRect" parent="." unique_id=995837330]
+custom_minimum_size = Vector2(100, 100)
+offset_left = 1009.0
+offset_top = 249.0
+offset_right = 1288.0
+offset_bottom = 703.0
+stretch_mode = 2
+
+[node name="CatSlot2" type="TextureRect" parent="." unique_id=1434440052]
+custom_minimum_size = Vector2(100, 100)
+offset_left = 815.0
+offset_top = 211.0
+offset_right = 1018.0
+offset_bottom = 452.0
+stretch_mode = 2
+
+[node name="CatSlot3" type="TextureRect" parent="." unique_id=1338379758]
+offset_left = 86.0
+offset_top = 382.0
+offset_right = 344.0
+offset_bottom = 720.0
+stretch_mode = 2
+
+[node name="CatSlot4" type="TextureRect" parent="." unique_id=1568621477]
+offset_left = 375.0
+offset_top = 503.0
+offset_right = 780.0
+offset_bottom = 720.0
+
+[node name="CatSlot5" type="TextureRect" parent="." unique_id=23098743]
+offset_left = 139.0
+offset_top = 106.0
+offset_right = 367.0
+offset_bottom = 315.0
+
+[node name="CatSlot6" type="TextureRect" parent="." unique_id=2125839933]
+offset_left = 602.0
+offset_right = 777.0
+offset_bottom = 238.0
+
+[node name="CatSlot7" type="TextureRect" parent="." unique_id=2115475804]
+offset_left = 377.0
+offset_top = 287.0
+offset_right = 631.0
+offset_bottom = 477.0
+
+[node name="TitleLabel" type="Label" parent="." unique_id=983748157]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -501.0
+offset_top = 3.0
+offset_right = -136.5
+offset_bottom = 26.0
+grow_horizontal = 2
+
+[node name="ContinueButton" type="Button" parent="." unique_id=1551280291]
+offset_right = 64.0
+offset_bottom = 60.0

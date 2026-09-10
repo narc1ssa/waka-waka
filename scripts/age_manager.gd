@@ -2,6 +2,7 @@ extends Node
 
 signal stage_changed(new_stage)
 signal total_eaten_changed(total)
+signal cats_collected_changed(new_count: int)  # <-- ДОБАВЛЕНО: для отслеживания в main.gd
 signal old_age_started(time_limit)
 signal player_died_old_age()
 signal rejuvenated(new_stage)
@@ -10,7 +11,7 @@ signal victory()
 
 const KILLS_PER_STAGE := 10
 const MAX_STAGE := 5
-const OLD_AGE_TIME := 60.0
+const OLD_AGE_TIME := 6.0
 const DEBUG_KEYS_ENABLED := true
 const WIN_TOTAL := 300
 
@@ -57,7 +58,9 @@ func eat_enemy() -> void:
 
 	total_eaten += 1
 	eaten_in_stage += 1
+	
 	total_eaten_changed.emit(total_eaten)
+	cats_collected_changed.emit(total_eaten)  # <-- ДОБАВЛЕНО: уведомляем main.gd
 
 	if total_eaten >= WIN_TOTAL:
 		_win()
@@ -114,7 +117,9 @@ func reset_game() -> void:
 
 	stage_changed.emit(stage)
 	total_eaten_changed.emit(total_eaten)
+	cats_collected_changed.emit(total_eaten)  # <-- ДОБАВЛЕНО: сброс счетчика
 	game_reset.emit()
+
 
 func _win() -> void:
 	if state == State.WON:

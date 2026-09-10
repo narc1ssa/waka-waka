@@ -107,6 +107,15 @@ func _on_rare_eaten(value: int, config: RareEnemyConfig) -> void:
 	for i in range(value):
 		AgeManager.eat_enemy()
 
+	# === ДОБАВЛЯЕМ В КОЛЛЕКЦИЮ ===
+	var collection_manager := get_node_or_null("../CollectionManager")
+	if collection_manager and collection_manager.has_method("add_found_cat"):
+		# Находим ID кота (индекс в массиве конфигов)
+		var cat_id := enemy_configs.find(config)
+		if cat_id >= 0:
+			collection_manager.add_found_cat(cat_id)
+	# ============================
+
 	var info_ui := get_tree().get_first_node_in_group("rare_info_ui") as CanvasLayer
 
 	if info_ui and info_ui.has_method("show_info_with_config"):

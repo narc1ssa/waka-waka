@@ -16,10 +16,18 @@ extends Node2D
 # Отладочная клавиша для ручного спавна таблетки.
 @export var debug_spawn_key := KEY_B
 
+# Отладочная клавиша для установки 290 котов (для теста победы)
+@export var debug_victory_key := KEY_V
+
 var ground: Sprite2D
 var player_camera: Camera2D
 var items: Node2D
 var pill_spawn_points: Node2D
+
+# Ссылки на UI
+@onready var victory_ui = $VictoryUI
+@onready var game_over_ui = $GameOverUI
+@onready var final_collection_screen = $FinalCollectionScreen
 
 var active_pills := []
 
@@ -33,6 +41,10 @@ func _ready() -> void:
 	AgeManager.stage_changed.connect(_on_stage_changed)
 	AgeManager.old_age_started.connect(_on_old_age_started)
 	AgeManager.game_reset.connect(_on_game_reset)
+	AgeManager.player_died_old_age.connect(_on_player_died)
+	
+	# Проверяем победу при изменении количества котов
+	AgeManager.cats_collected_changed.connect(_on_cats_collected_changed)
 	
 	AudioManager.play_level_music()
 
@@ -40,6 +52,7 @@ func _ready() -> void:
 	AgeManager.rejuvenated.connect(_on_level_music)
 	AgeManager.game_reset.connect(_on_level_music)
 	AgeManager.player_died_old_age.connect(_on_death_music)
+
 
 func _on_old_age_music(_time_limit: float) -> void:
 	AudioManager.play_old_age_music()
@@ -51,11 +64,31 @@ func _on_level_music(_a = null) -> void:
 
 func _on_death_music() -> void:
 	AudioManager.stop_music()
-	
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == debug_spawn_key:
 			spawn_pill()
+		
+		# === ОТЛАДКА: установить 290 котов ===
+		if event.keycode == debug_victory_key:
+			print("🎮 DEBUG: Установлено 290 котов (для теста победы)")
+			
+			# Сбрасываем состояние в ALIVE, чтобы eat_enemy() работал
+			AgeManager.state = AgeManager.State.ALIVE
+			AgeManager.total_eaten = 290
+			AgeManager.stage = 1  # Остаёмся на 1 стадии
+			AgeManager.eaten_in_stage = 0  # Сбрасываем счётчик стадии
+			
+			# Эмитим сигналы, чтобы UI обновился
+			AgeManager.cats_collected_changed.emit(290)
+			AgeManager.total_eaten_changed.emit(290)
+			AgeManager.stage_changed.emit(1)
+			
+			print("🐱 Всего котов: ", AgeManager.total_eaten)
+			print("📊 Стадия: ", AgeManager.stage)
+			print("🎯 Состояние: ", AgeManager.state)
 
 
 func _on_stage_changed(new_stage: int) -> void:
@@ -70,6 +103,28 @@ func _on_old_age_started(_time_limit: float) -> void:
 
 func _on_game_reset() -> void:
 	clear_pills()
+
+
+func _on_cats_collected_changed(new_count: int) -> void:
+	# Проверяем условие победы (300 котов)
+	if new_count >= 300:
+		print("🏆 ПОБЕДА! Собрано ", new_count, " котов!")
+		_on_player_won()
+
+
+func _on_player_died() -> void:
+	print("💀 Игрок умер от старости")
+	_on_death_music()
+	# Показываем экран проигрыша
+	if game_over_ui and game_over_ui.has_method("show_game_over"):
+		game_over_ui.show_game_over()
+
+
+func _on_player_won() -> void:
+	print("🎉 Вызов экрана победы!")
+	# Показываем экран победы
+	if victory_ui and victory_ui.has_method("show_victory"):
+		victory_ui.show_victory()
 
 
 func spawn_pill() -> void:

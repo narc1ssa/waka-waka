@@ -770,10 +770,12 @@ stretch_mode = 5
 [node name="RareEnemySpawner" parent="." unique_id=397771721 instance=ExtResource("26_36rkl")]
 
 [node name="RareEnemyInfoUI" parent="." unique_id=927427674 instance=ExtResource("27_fs0b5")]
+visible = false
 
 [node name="CollectionManager" type="Node" parent="." unique_id=48290359]
 script = ExtResource("28_ma7h6")
 
 [node name="FinalCollectionScreen" parent="." unique_id=663275249 instance=ExtResource("29_e2s0e")]
+visible = false
 
 [editable path="Player"]
