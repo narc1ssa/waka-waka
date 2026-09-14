@@ -40,7 +40,7 @@ layout_mode = 0
 offset_right = 243.0
 offset_bottom = 69.0
 theme_override_font_sizes/font_size = 21
-text = "Редкий кот! +5 котов"
+text = "Rare cat! +5 cats"
 
 [node name="CloseButton" type="TextureButton" parent="InfoPanel" unique_id=322548068]
 layout_mode = 1
@@ -54,3 +54,4 @@ texture_normal = ExtResource("3_4yduc")
 texture_pressed = ExtResource("4_x3iad")
 texture_hover = ExtResource("4_x3iad")
 texture_focused = ExtResource("4_x3iad")
+stretch_mode = 3

@@ -35,11 +35,11 @@ func _process(delta: float) -> void:
 
 
 func _on_stage_changed(new_stage: int) -> void:
-	stage_label.text = "Стадия: %d/%d" % [new_stage, AgeManager.MAX_STAGE]
+	stage_label.text = "Stage: %d/%d" % [new_stage, AgeManager.MAX_STAGE]
 
 
 func _on_total_changed(total: int) -> void:
-	total_label.text = "Коты: %d / %d" % [total, AgeManager.WIN_TOTAL]
+	total_label.text = "Cats: %d / %d" % [total, AgeManager.WIN_TOTAL]
 
 
 func _on_old_age_started(time_limit: float) -> void:
@@ -71,7 +71,7 @@ func _on_game_reset() -> void:
 
 func _update_warning_text() -> void:
 	# Обновляем текст
-	warning_label.text = "⏰ Найди домик: %.1f сек." % current_time_limit
+	warning_label.text = "⏰ Find a cat home: %.1f sec." % current_time_limit
 
 	# Меняем цвет и добавляем мигание в зависимости от времени
 	if current_time_limit <= 5.0:

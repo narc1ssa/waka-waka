@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bnwhe4cwwa2hy" path="res://assets/rare_enemies/05_found.png" id="8_1hj8k"]
 [ext_resource type="Texture2D" uid="uid://fljnve6ddg7e" path="res://assets/rare_enemies/06_found.png" id="9_rqbhk"]
 [ext_resource type="Texture2D" uid="uid://bfjfpeia4hfun" path="res://assets/rare_enemies/07_found.png" id="10_ojyxu"]
+[ext_resource type="Texture2D" uid="uid://t52qgnarjxu7" path="res://assets/rare_enemies/кнопка.png" id="10_wlcld"]
 
 [node name="FinalCollectionScreen" type="CanvasLayer" unique_id=663275249]
 script = ExtResource("1_l5tda")
@@ -80,5 +81,11 @@ offset_bottom = 26.0
 grow_horizontal = 2
 
 [node name="ContinueButton" type="Button" parent="." unique_id=1551280291]
-offset_right = 64.0
-offset_bottom = 60.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+icon = ExtResource("10_wlcld")
+flat = true
