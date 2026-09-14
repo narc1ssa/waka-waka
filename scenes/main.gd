@@ -115,6 +115,16 @@ func _on_cats_collected_changed(new_count: int) -> void:
 func _on_player_died() -> void:
 	print("💀 Игрок умер от старости")
 	_on_death_music()
+	
+	# Ждём окончания анимации смерти игрока
+	var player := get_node_or_null("Player")
+	if player and player.has_signal("death_finished"):
+		print("⏳ Ждём окончания анимации смерти...")
+		await player.death_finished
+		print("✅ Анимация смерти завершена")
+		# Небольшая пауза, чтобы игрок увидел последний кадр
+		await get_tree().create_timer(0.5).timeout
+	
 	# Показываем экран проигрыша
 	if game_over_ui and game_over_ui.has_method("show_game_over"):
 		game_over_ui.show_game_over()

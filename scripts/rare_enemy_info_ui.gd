@@ -30,7 +30,7 @@ func show_info_with_config(config: RareEnemyConfig) -> void:
 	info_image.texture = config.enemy_image
 	
 	# Устанавливаем текст
-	info_text.text = "%s\n+%d котов!" % [config.info_text, config.reward]
+	info_text.text = "%s\n+%d cats!" % [config.info_text, config.reward]
 	
 	info_panel.visible = true
 	is_visible = true
@@ -40,7 +40,7 @@ func show_info_with_config(config: RareEnemyConfig) -> void:
 
 # Старая функция (для совместимости)
 func show_info(text: String, reward: int) -> void:
-	info_text.text = "%s\n+%d котов!" % [text, reward]
+	info_text.text = "%s\n+%d cats!" % [text, reward]
 	
 	info_panel.visible = true
 	is_visible = true
