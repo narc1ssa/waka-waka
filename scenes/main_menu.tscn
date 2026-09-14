@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dxxclwwqiecgv" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://gw1uql5adv1r" path="res://assets/map/Max_a_убери_кнопки_и_надпи.png" id="2_rtw2f"]
-[ext_resource type="Texture2D" uid="uid://csdv65e5jy48e" path="res://assets/UI/btn_quit.png" id="3_8ln24"]
-[ext_resource type="Texture2D" uid="uid://rmhq0s51ifsw" path="res://assets/map/Max_a_сделай_надпись_на_бе.png" id="3_oa1go"]
-[ext_resource type="Texture2D" uid="uid://m6emhe5x1uj0" path="res://assets/UI/btn_quit_.png" id="4_rtw2f"]
-[ext_resource type="Texture2D" uid="uid://cnenl13tft17f" path="res://assets/UI/btn_play.png" id="5_oa1go"]
-[ext_resource type="Texture2D" uid="uid://d3lbm23nw7c0v" path="res://assets/UI/btn_play_.png" id="6_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://dip60sxbvxnc7" path="res://assets/UI/Max_a_на_первом_фото_сдела (1).png" id="3_oa1go"]
+[ext_resource type="Texture2D" uid="uid://bq3svoymdtf4w" path="res://assets/UI/EU/btn_quit.png" id="4_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://cpb4vo31ohn3c" path="res://assets/UI/EU/btn_quit_.png" id="5_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://gyc6xo1jvghc" path="res://assets/UI/EU/btn_play.png" id="6_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://w5704ffn7db0" path="res://assets/UI/EU/btn_play_.png" id="7_lgwnu"]
 
 [node name="MainMenu" type="Control" unique_id=274975166]
 layout_mode = 3
@@ -37,9 +37,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -342.0
-offset_right = 707.0
-offset_bottom = -41.0
+offset_left = -12.0
+offset_top = -346.0
+offset_right = 709.0
+offset_bottom = -33.0
 grow_vertical = 2
 texture = ExtResource("3_oa1go")
 expand_mode = 3
@@ -78,10 +79,10 @@ offset_top = -147.36002
 offset_right = -25.500061
 offset_bottom = -143.76001
 size_flags_horizontal = 4
-texture_normal = ExtResource("3_8ln24")
-texture_pressed = ExtResource("4_rtw2f")
-texture_hover = ExtResource("4_rtw2f")
-texture_focused = ExtResource("4_rtw2f")
+texture_normal = ExtResource("4_tbmy8")
+texture_pressed = ExtResource("5_jk1qb")
+texture_hover = ExtResource("5_jk1qb")
+texture_focused = ExtResource("5_jk1qb")
 
 [node name="QuitButton" type="TextureButton" parent="." unique_id=145736689]
 layout_mode = 1
@@ -95,7 +96,7 @@ offset_top = -147.36005
 offset_right = -25.600037
 offset_bottom = -144.36005
 size_flags_horizontal = 4
-texture_normal = ExtResource("5_oa1go")
-texture_pressed = ExtResource("6_rtw2f")
-texture_hover = ExtResource("6_rtw2f")
-texture_focused = ExtResource("6_rtw2f")
+texture_normal = ExtResource("6_5dd4i")
+texture_pressed = ExtResource("7_lgwnu")
+texture_hover = ExtResource("7_lgwnu")
+texture_focused = ExtResource("7_lgwnu")
