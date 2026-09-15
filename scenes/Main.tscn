@@ -532,7 +532,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxTexture_xa025")
-text = "Soon you will be owerhelmed!"
+text = "Soon you will be overwhelmed!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -773,6 +773,5 @@ stretch_mode = 5
 script = ExtResource("28_ma7h6")
 
 [node name="FinalCollectionScreen" parent="." unique_id=663275249 instance=ExtResource("29_e2s0e")]
-visible = false
 
 [editable path="Player"]
