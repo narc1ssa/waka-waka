@@ -30,6 +30,7 @@ var pill_spawn_points: Node2D
 @onready var final_collection_screen = $FinalCollectionScreen
 
 var active_pills := []
+var show_tutorial := true
 
 
 func _ready() -> void:
@@ -101,8 +102,12 @@ func _on_old_age_started(_time_limit: float) -> void:
 		spawn_pill()
 
 
+func should_show_tutorial() -> bool:
+	return show_tutorial
+
 func _on_game_reset() -> void:
 	clear_pills()
+	show_tutorial = false  # Не показывать инструкции при рестарте
 
 
 func _on_cats_collected_changed(new_count: int) -> void:

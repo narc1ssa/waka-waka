@@ -56,10 +56,10 @@ func show_collection(restart_after := false) -> void:
 	var all_found = collection_manager.all_cats_found()
 	
 	if all_found:
-		title_label.text = "🎉 ВСЕ КОТЫ НАЙДЕНЫ! 🎉"
+		title_label.text = "🎉 ALL CATS COLLECTED! 🎉"
 		title_label.modulate = Color.GOLD
 	else:
-		title_label.text = "Собрано котов: %d / %d" % [
+		title_label.text = "Cats collected: %d / %d" % [
 			collection_manager.get_found_count(),
 			collection_manager.TOTAL_RARE_CATS
 		]

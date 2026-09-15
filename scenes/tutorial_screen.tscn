@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bcdeuct7jlve4"]
+
+[ext_resource type="Script" uid="uid://b4uov6rxalsb7" path="res://scripts/tutorial_screen.gd" id="1_6iv2e"]
+[ext_resource type="Texture2D" uid="uid://ch4yhwi3pxfp7" path="res://assets/UI/Max_a_перемести_череп_и_от.png" id="1_obyet"]
+[ext_resource type="Texture2D" uid="uid://t52qgnarjxu7" path="res://assets/rare_enemies/кнопка.png" id="2_2xfp7"]
+[ext_resource type="Texture2D" uid="uid://dy8ajokpb8f7a" path="res://assets/rare_enemies/кнопка_.png" id="3_6iv2e"]
+
+[node name="TutorialScreen" type="CanvasLayer" unique_id=977576208]
+script = ExtResource("1_6iv2e")
+
+[node name="Dim" type="ColorRect" parent="." unique_id=1628905801]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.23921569, 0.14509805, 0.078431375, 0.70980394)
+
+[node name="Background" type="TextureRect" parent="." unique_id=959782035]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_obyet")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CloseButton" type="TextureButton" parent="." unique_id=1186173808]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -131.0
+offset_top = 151.0
+offset_right = -91.0
+offset_bottom = 191.0
+grow_horizontal = 0
+texture_normal = ExtResource("2_2xfp7")
+texture_pressed = ExtResource("3_6iv2e")
+texture_hover = ExtResource("3_6iv2e")
+texture_focused = ExtResource("3_6iv2e")
