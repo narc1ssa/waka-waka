@@ -8,12 +8,22 @@
 [ext_resource type="Texture2D" uid="uid://byswfbcwufja0" path="res://assets/rare_enemies/04_found.png" id="7_f1mjc"]
 [ext_resource type="Texture2D" uid="uid://bnwhe4cwwa2hy" path="res://assets/rare_enemies/05_found.png" id="8_1hj8k"]
 [ext_resource type="Texture2D" uid="uid://fljnve6ddg7e" path="res://assets/rare_enemies/06_found.png" id="9_rqbhk"]
+[ext_resource type="Texture2D" uid="uid://cefwlnux0e8o5" path="res://assets/UI/EU/AllCatsCollected.png" id="9_ynt0f"]
+[ext_resource type="Texture2D" uid="uid://deyasa6atltfa" path="res://assets/UI/EU/Cats_collected_0_7.png" id="10_5tvdx"]
 [ext_resource type="Texture2D" uid="uid://bfjfpeia4hfun" path="res://assets/rare_enemies/07_found.png" id="10_ojyxu"]
 [ext_resource type="Texture2D" uid="uid://t52qgnarjxu7" path="res://assets/rare_enemies/кнопка.png" id="10_wlcld"]
+[ext_resource type="Texture2D" uid="uid://br0tmtq6f3jf0" path="res://assets/UI/EU/Cats_collected_1_7.png" id="11_f1mjc"]
+[ext_resource type="Texture2D" uid="uid://c2668go1fy13g" path="res://assets/UI/EU/Cats_collected_2_7.png" id="12_1hj8k"]
+[ext_resource type="Texture2D" uid="uid://blcuvb5innoeq" path="res://assets/UI/EU/Cats_collected_3_7.png" id="13_rqbhk"]
+[ext_resource type="Texture2D" uid="uid://b1xjenvu5vf5d" path="res://assets/UI/EU/Cats_collected_4_7.png" id="14_ojyxu"]
+[ext_resource type="Texture2D" uid="uid://cm4ftsrcs4j2u" path="res://assets/UI/EU/Cats_collected_5_7.png" id="15_as4t7"]
+[ext_resource type="Texture2D" uid="uid://fltarqopl44n" path="res://assets/UI/EU/Cats_collected_6_7.png" id="16_j5am7"]
 
 [node name="FinalCollectionScreen" type="CanvasLayer" unique_id=663275249]
 script = ExtResource("1_l5tda")
 cat_found_textures = Array[Texture2D]([ExtResource("4_okjab"), ExtResource("5_ynt0f"), ExtResource("6_5tvdx"), ExtResource("7_f1mjc"), ExtResource("8_1hj8k"), ExtResource("9_rqbhk"), ExtResource("10_ojyxu")])
+all_cats_found_image = ExtResource("9_ynt0f")
+progress_images = Array[Texture2D]([ExtResource("10_5tvdx"), ExtResource("11_f1mjc"), ExtResource("12_1hj8k"), ExtResource("13_rqbhk"), ExtResource("14_ojyxu"), ExtResource("15_as4t7"), ExtResource("16_j5am7")])
 
 [node name="Background" type="TextureRect" parent="." unique_id=924913478]
 anchors_preset = 15
@@ -23,6 +33,12 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_y64cg")
 stretch_mode = 2
+
+[node name="ProgressImage" type="TextureRect" parent="." unique_id=1015752068]
+offset_right = 601.0
+offset_bottom = 150.0
+expand_mode = 1
+stretch_mode = 5
 
 [node name="CatSlot1" type="TextureRect" parent="." unique_id=995837330]
 custom_minimum_size = Vector2(100, 100)

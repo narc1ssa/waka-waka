@@ -1,11 +1,18 @@
 extends CanvasLayer
 
-# Массив текстур для найденных котов (7 штук)
 @export var cat_found_textures: Array[Texture2D]
+
+# Картинка для случая "все коты найдены"
+@export var all_cats_found_image: Texture2D
+
+# Массив из 7 картинок для прогресса (1 из 7, 2 из 7, и т.д.)
+@export var progress_images: Array[Texture2D]
 
 @onready var background: TextureRect = $Background
 @onready var title_label: Label = $TitleLabel
 @onready var continue_button: Button = $ContinueButton
+# Добавь ноду для отображения картинки прогресса
+@onready var progress_image: TextureRect = $ProgressImage
 
 var cat_slots: Array[TextureRect] = []
 var collection_manager: Node
@@ -52,21 +59,31 @@ func show_collection(restart_after := false) -> void:
 	
 	_update_cat_slots()
 	
-	# Показываем заголовок
+	# Проверяем, все ли коты найдены
 	var all_found = collection_manager.all_cats_found()
+	var found_count = collection_manager.get_found_count()
 	
 	if all_found:
-		title_label.text = "🎉 ALL CATS COLLECTED! 🎉"
-		title_label.modulate = Color.GOLD
+		# Все коты найдены - показываем соответствующую картинку
+		title_label.visible = false  # Скрываем текст
+		if all_cats_found_image:
+			progress_image.texture = all_cats_found_image
+			progress_image.visible = true
+			print(" Все коты найдены!")
 	else:
-		title_label.text = "Cats collected: %d / %d" % [
-			collection_manager.get_found_count(),
-			collection_manager.TOTAL_RARE_CATS
-		]
-		title_label.modulate = Color.WHITE
-	
-	print("📊 Финальный экран: найдено ", collection_manager.get_found_count(), "/", collection_manager.TOTAL_RARE_CATS)
-
+		# Показываем картинку прогресса (1 из 7, 2 из 7, и т.д.)
+		title_label.visible = false  # Скрываем текст
+		
+		# Индекс в массиве: если найдено 1 кот, берём индекс 0, если 2 - индекс 1, и т.д.
+		var progress_index = found_count - 1
+		
+		if progress_index >= 0 and progress_index < progress_images.size():
+			progress_image.texture = progress_images[progress_index]
+			progress_image.visible = true
+			print(" Показан прогресс: %d из %d" % [found_count, collection_manager.TOTAL_RARE_CATS])
+		else:
+			progress_image.visible = false
+			print(" Нет картинки для прогресса %d" % found_count)
 
 func _update_cat_slots() -> void:
 	var found_cats: Array[int] = collection_manager.found_cats
