@@ -2,9 +2,9 @@ extends Node
 
 @export var enemy_configs: Array[RareEnemyConfig] = []
 
-@export var spawn_interval := 3.0
-@export var max_rare_enemies := 20
-@export var min_distance_from_player := 20.0
+@export var spawn_interval := 10.0
+@export var max_rare_enemies := 5
+@export var min_distance_from_player := 200.0
 
 var spawn_timer: Timer
 

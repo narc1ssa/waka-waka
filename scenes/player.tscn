@@ -145,6 +145,9 @@ animations = [{
 "texture": ExtResource("14_qfm1y")
 }, {
 "duration": 1.0,
+"texture": ExtResource("16_4r5pv")
+}, {
+"duration": 1.0,
 "texture": ExtResource("15_fulsm")
 }, {
 "duration": 1.0,
@@ -446,7 +449,8 @@ stages = Array[ExtResource("2_jej6c")]([ExtResource("3_f1ej7"), ExtResource("4_o
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visual" unique_id=653797930]
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_bvp88")
-animation = &"death"
+animation = &"stage_2_walk_left"
+frame_progress = 0.5474409
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=265808849]
 position = Vector2(0, 22)

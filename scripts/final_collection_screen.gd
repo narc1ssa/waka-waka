@@ -2,8 +2,6 @@ extends CanvasLayer
 
 @export var cat_found_textures: Array[Texture2D]
 
-# Картинка для случая "все коты найдены"
-@export var all_cats_found_image: Texture2D
 
 # Массив из 7 картинок для прогресса (1 из 7, 2 из 7, и т.д.)
 @export var progress_images: Array[Texture2D]
@@ -60,30 +58,24 @@ func show_collection(restart_after := false) -> void:
 	_update_cat_slots()
 	
 	# Проверяем, все ли коты найдены
-	var all_found = collection_manager.all_cats_found()
 	var found_count = collection_manager.get_found_count()
 	
-	if all_found:
-		# Все коты найдены - показываем соответствующую картинку
-		title_label.visible = false  # Скрываем текст
-		if all_cats_found_image:
-			progress_image.texture = all_cats_found_image
-			progress_image.visible = true
-			print(" Все коты найдены!")
+	# Скрываем текстовый заголовок
+	title_label.visible = false
+	
+	# Показываем картинку прогресса
+	# Массив progress_images должен содержать 8 картинок:
+	# Индекс 0: "0 котов"
+	# Индексы 1-6: "1 из 7" ... "6 из 7"
+	# Индекс 7: "Все коты собраны!"
+	
+	if found_count >= 0 and found_count < progress_images.size():
+		progress_image.texture = progress_images[found_count]
+		progress_image.visible = true
+		print("🖼️ Показана картинка для %d котов" % found_count)
 	else:
-		# Показываем картинку прогресса (1 из 7, 2 из 7, и т.д.)
-		title_label.visible = false  # Скрываем текст
-		
-		# Индекс в массиве: если найдено 1 кот, берём индекс 0, если 2 - индекс 1, и т.д.
-		var progress_index = found_count - 1
-		
-		if progress_index >= 0 and progress_index < progress_images.size():
-			progress_image.texture = progress_images[progress_index]
-			progress_image.visible = true
-			print(" Показан прогресс: %d из %d" % [found_count, collection_manager.TOTAL_RARE_CATS])
-		else:
-			progress_image.visible = false
-			print(" Нет картинки для прогресса %d" % found_count)
+		progress_image.visible = false
+		print("️ Нет картинки для %d котов (размер массива: %d)" % [found_count, progress_images.size()])
 
 func _update_cat_slots() -> void:
 	var found_cats: Array[int] = collection_manager.found_cats

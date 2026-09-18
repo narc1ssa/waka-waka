@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b4uov6rxalsb7" path="res://scripts/tutorial_screen.gd" id="1_6iv2e"]
 [ext_resource type="Texture2D" uid="uid://t52qgnarjxu7" path="res://assets/rare_enemies/кнопка.png" id="2_2xfp7"]
-[ext_resource type="Texture2D" uid="uid://bub6xbrbpkkmw" path="res://assets/UI/EU/Max_a_переверстай_формат_н.png" id="2_6iv2e"]
+[ext_resource type="Texture2D" uid="uid://dfyuyxpmnw2vd" path="res://assets/UI/brief_rus.png" id="2_6iv2e"]
 [ext_resource type="Texture2D" uid="uid://dy8ajokpb8f7a" path="res://assets/rare_enemies/кнопка_.png" id="3_6iv2e"]
 
 [node name="TutorialScreen" type="CanvasLayer" unique_id=977576208]

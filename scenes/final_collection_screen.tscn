@@ -22,8 +22,7 @@
 [node name="FinalCollectionScreen" type="CanvasLayer" unique_id=663275249]
 script = ExtResource("1_l5tda")
 cat_found_textures = Array[Texture2D]([ExtResource("4_okjab"), ExtResource("5_ynt0f"), ExtResource("6_5tvdx"), ExtResource("7_f1mjc"), ExtResource("8_1hj8k"), ExtResource("9_rqbhk"), ExtResource("10_ojyxu")])
-all_cats_found_image = ExtResource("9_ynt0f")
-progress_images = Array[Texture2D]([ExtResource("10_5tvdx"), ExtResource("11_f1mjc"), ExtResource("12_1hj8k"), ExtResource("13_rqbhk"), ExtResource("14_ojyxu"), ExtResource("15_as4t7"), ExtResource("16_j5am7")])
+progress_images = Array[Texture2D]([ExtResource("10_5tvdx"), ExtResource("11_f1mjc"), ExtResource("12_1hj8k"), ExtResource("13_rqbhk"), ExtResource("14_ojyxu"), ExtResource("15_as4t7"), ExtResource("16_j5am7"), ExtResource("9_ynt0f")])
 
 [node name="Background" type="TextureRect" parent="." unique_id=924913478]
 anchors_preset = 15
@@ -35,7 +34,8 @@ texture = ExtResource("3_y64cg")
 stretch_mode = 2
 
 [node name="ProgressImage" type="TextureRect" parent="." unique_id=1015752068]
-offset_right = 601.0
+offset_left = 18.0
+offset_right = 619.0
 offset_bottom = 150.0
 expand_mode = 1
 stretch_mode = 5
