@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://uui7cvbr6pbl" path="res://assets/hero3/04.png" id="20_31cv2"]
 [ext_resource type="Texture2D" uid="uid://ywp8sdalx3p0" path="res://assets/hero3/09.png" id="20_mx1m4"]
 [ext_resource type="Texture2D" uid="uid://dsof00kfukro7" path="res://assets/hero3/10.png" id="21_4gjji"]
+[ext_resource type="Texture2D" uid="uid://c5pyrvqildy8n" path="res://assets/hero2/15.png" id="21_fr8ja"]
 [ext_resource type="Texture2D" uid="uid://dbaksr2mvukji" path="res://assets/hero3/05.png" id="21_pf23h"]
 [ext_resource type="Texture2D" uid="uid://t3llufxfhxk1" path="res://assets/hero3/06.png" id="22_dt7fs"]
 [ext_resource type="Texture2D" uid="uid://d1s4why8ttnv4" path="res://assets/hero3/11.png" id="22_u2ulf"]
@@ -42,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://f4a1evyjv1in" path="res://assets/hero3/01 — копия.png" id="25_gl8cc"]
 [ext_resource type="Texture2D" uid="uid://dc5uvped7txab" path="res://assets/hero3/14.png" id="25_sc3ue"]
 [ext_resource type="Texture2D" uid="uid://bkl3nvnlxxrbq" path="res://assets/hero3/02 — копия.png" id="26_487ah"]
+[ext_resource type="Texture2D" uid="uid://dsvivrbso2q8f" path="res://assets/hero2/16.png" id="26_gvmy4"]
 [ext_resource type="Texture2D" uid="uid://cneou5k3x6muv" path="res://assets/hero3/15.png" id="26_lxlsd"]
 [ext_resource type="Texture2D" uid="uid://ttebaeoi1pob" path="res://assets/hero3/16.png" id="27_ha2mi"]
 [ext_resource type="Texture2D" uid="uid://bfc0khvng2n5w" path="res://assets/hero3/03 — копия.png" id="27_md1ol"]
@@ -145,13 +147,16 @@ animations = [{
 "texture": ExtResource("14_qfm1y")
 }, {
 "duration": 1.0,
+"texture": ExtResource("21_fr8ja")
+}, {
+"duration": 1.0,
 "texture": ExtResource("16_4r5pv")
 }, {
 "duration": 1.0,
 "texture": ExtResource("15_fulsm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_4r5pv")
+"texture": ExtResource("21_fr8ja")
 }],
 "loop": 1,
 "name": &"stage_1_walk_left",
@@ -165,10 +170,16 @@ animations = [{
 "texture": ExtResource("18_i4ail")
 }, {
 "duration": 1.0,
+"texture": ExtResource("26_gvmy4")
+}, {
+"duration": 1.0,
 "texture": ExtResource("19_a38lo")
 }, {
 "duration": 1.0,
 "texture": ExtResource("20_4ni07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_gvmy4")
 }],
 "loop": 1,
 "name": &"stage_1_walk_right",
@@ -449,8 +460,9 @@ stages = Array[ExtResource("2_jej6c")]([ExtResource("3_f1ej7"), ExtResource("4_o
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visual" unique_id=653797930]
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_bvp88")
-animation = &"stage_2_walk_left"
-frame_progress = 0.5474409
+animation = &"stage_1_walk_right"
+frame = 2
+frame_progress = 0.9108186
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=265808849]
 position = Vector2(0, 22)

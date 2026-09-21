@@ -38,7 +38,7 @@ func _on_resume() -> void:
 func _on_restart() -> void:
 	get_tree().paused = false
 	AgeManager.reset_game()
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	get_tree().change_scene_to_file("res://scenes/Main.tscn")
 
 
 func _on_menu() -> void:
