@@ -6,7 +6,7 @@ extends Node
 @export var enemy_colors: Array[Color] = []
 
 @export var initial_enemies := 5
-@export var max_enemies := 10
+@export var max_enemies := 20
 @export var spawn_interval := 3.0
 @export var min_distance_from_player := 120.0
 
