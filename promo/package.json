@@ -1,0 +1,19 @@
+{
+  "name": "waka-promo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Промо-ролик игры Waka (Godot 4): кадры рисуются через Skia и собираются ffmpeg из настоящих ассетов игры",
+  "scripts": {
+    "assets": "python3 tools/extract_assets.py",
+    "audio": "node src/audio.mjs",
+    "stats": "node src/render.mjs --stats",
+    "stills": "node src/render.mjs --stills 30,150,330,520,700,800,870",
+    "render": "node src/render.mjs --video"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.80"
+  },
+  "devDependencies": {
+    "@fontsource/montserrat": "^5.2.8"
+  }
+}

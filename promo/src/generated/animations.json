@@ -1,0 +1,489 @@
+{
+  "animations": {
+    "death": {
+      "speed": 3.0,
+      "frames": [
+        "assets/hero6__death1.png",
+        "assets/hero6__death2.png",
+        "assets/hero6__death3.png",
+        "assets/hero6__death4.png",
+        "assets/hero6__death5.png",
+        "assets/hero6__death6.png",
+        "assets/hero6__death7.png"
+      ]
+    },
+    "stage_1_idle": {
+      "speed": 2.0,
+      "frames": [
+        "assets/hero2__11.png",
+        "assets/hero2__12.png",
+        "assets/hero2__13.png",
+        "assets/hero2__14.png"
+      ]
+    },
+    "stage_1_walk_left": {
+      "speed": 5.0,
+      "frames": [
+        "assets/hero2__01.png",
+        "assets/hero2__02.png",
+        "assets/hero2__15.png",
+        "assets/hero2__05.png",
+        "assets/hero2__03.png",
+        "assets/hero2__15.png"
+      ]
+    },
+    "stage_1_walk_right": {
+      "speed": 5.0,
+      "frames": [
+        "assets/hero2__06.png",
+        "assets/hero2__07.png",
+        "assets/hero2__16.png",
+        "assets/hero2__08.png",
+        "assets/hero2__09.png",
+        "assets/hero2__16.png"
+      ]
+    },
+    "stage_2_idle": {
+      "speed": 2.0,
+      "frames": [
+        "assets/hero3__09.png",
+        "assets/hero3__10.png",
+        "assets/hero3__11.png",
+        "assets/hero3__12.png",
+        "assets/hero3__13.png",
+        "assets/hero3__14.png",
+        "assets/hero3__15.png",
+        "assets/hero3__16.png"
+      ]
+    },
+    "stage_2_walk_left": {
+      "speed": 5.0,
+      "frames": [
+        "assets/hero3__01.png",
+        "assets/hero3__02.png",
+        "assets/hero3__03.png",
+        "assets/hero3__04.png",
+        "assets/hero3__05.png",
+        "assets/hero3__06.png",
+        "assets/hero3__07.png",
+        "assets/hero3__08.png"
+      ]
+    },
+    "stage_2_walk_right": {
+      "speed": 5.0,
+      "frames": [
+        "assets/hero3__01_.png",
+        "assets/hero3__02_.png",
+        "assets/hero3__03_.png",
+        "assets/hero3__04_.png",
+        "assets/hero3__05_.png",
+        "assets/hero3__06_.png",
+        "assets/hero3__07_.png",
+        "assets/hero3__08_.png"
+      ]
+    },
+    "stage_3_idle": {
+      "speed": 2.0,
+      "frames": [
+        "assets/hero4__01.png",
+        "assets/hero4__02.png",
+        "assets/hero4__03.png",
+        "assets/hero4__04.png",
+        "assets/hero4__05.png",
+        "assets/hero4__06.png"
+      ]
+    },
+    "stage_3_walk_left": {
+      "speed": 5.0,
+      "frames": [
+        "assets/hero4__07.png",
+        "assets/hero4__08.png",
+        "assets/hero4__09.png",
+        "assets/hero4__10.png",
+        "assets/hero4__11.png",
+        "assets/hero4__12.png"
+      ]
+    },
+    "stage_3_walk_right": {
+      "speed": 5.0,
+      "frames": [
+        "assets/hero4__07_.png",
+        "assets/hero4__08_.png",
+        "assets/hero4__09_.png",
+        "assets/hero4__10_.png",
+        "assets/hero4__11_.png",
+        "assets/hero4__12_.png"
+      ]
+    },
+    "stage_4_idle": {
+      "speed": 2.0,
+      "frames": [
+        "assets/hero5__06.png",
+        "assets/hero5__07.png"
+      ]
+    },
+    "stage_4_walk_left": {
+      "speed": 5.0,
+      "frames": [
+        "assets/hero5__01.png",
+        "assets/hero5__02.png",
+        "assets/hero5__03.png",
+        "assets/hero5__04.png",
+        "assets/hero5__05.png"
+      ]
+    },
+    "stage_4_walk_right": {
+      "speed": 5.0,
+      "frames": [
+        "assets/hero5__01_.png",
+        "assets/hero5__02_.png",
+        "assets/hero5__03_.png",
+        "assets/hero5__04_.png",
+        "assets/hero5__05_.png"
+      ]
+    },
+    "stage_5_idle": {
+      "speed": 2.0,
+      "frames": [
+        "assets/hero6__01.png",
+        "assets/hero6__02.png"
+      ]
+    },
+    "stage_5_walk_left": {
+      "speed": 5.0,
+      "frames": [
+        "assets/hero6__03_.png",
+        "assets/hero6__04_.png",
+        "assets/hero6__05_.png",
+        "assets/hero6__06_.png"
+      ]
+    },
+    "stage_5_walk_right": {
+      "speed": 5.0,
+      "frames": [
+        "assets/hero6__03.png",
+        "assets/hero6__04.png",
+        "assets/hero6__05.png",
+        "assets/hero6__06.png",
+        "assets/hero6__07.png"
+      ]
+    },
+    "enemy1_idle": {
+      "speed": 5.0,
+      "frames": [
+        "assets/enemies__enemy1_1.png",
+        "assets/enemies__enemy1_2.png",
+        "assets/enemies__enemy1_3.png",
+        "assets/enemies__enemy1_4.png",
+        "assets/enemies__enemy1_5.png"
+      ]
+    },
+    "enemy2_idle": {
+      "speed": 5.0,
+      "frames": [
+        "assets/enemies__enemy2_1.png",
+        "assets/enemies__enemy2_2.png",
+        "assets/enemies__enemy2_3.png"
+      ]
+    },
+    "enemy3_idle": {
+      "speed": 5.0,
+      "frames": [
+        "assets/enemies__enemy3_1.png",
+        "assets/enemies__enemy3_2.png",
+        "assets/enemies__enemy3_3.png"
+      ]
+    },
+    "enemy4_idle": {
+      "speed": 5.0,
+      "frames": [
+        "assets/enemies__enemy4_1.png",
+        "assets/enemies__enemy4_2.png",
+        "assets/enemies__enemy4_3.png"
+      ]
+    },
+    "rare_enemy1_idle": {
+      "speed": 5.0,
+      "frames": [
+        "assets/rare_enemies__enemy1_1.png",
+        "assets/rare_enemies__enemy1_3.png",
+        "assets/rare_enemies__enemy1_2.png",
+        "assets/rare_enemies__enemy1_4.png",
+        "assets/rare_enemies__enemy1_5.png",
+        "assets/rare_enemies__enemy1_7.png",
+        "assets/rare_enemies__enemy1_6.png"
+      ]
+    },
+    "rare_enemy2_idle": {
+      "speed": 5.0,
+      "frames": [
+        "assets/rare_enemies__enemy2_1.png",
+        "assets/rare_enemies__enemy2_2.png",
+        "assets/rare_enemies__enemy2_3.png",
+        "assets/rare_enemies__enemy2_4.png",
+        "assets/rare_enemies__enemy2_5.png",
+        "assets/rare_enemies__enemy2_6.png"
+      ]
+    },
+    "rare_enemy3_idle": {
+      "speed": 5.0,
+      "frames": [
+        "assets/rare_enemies__enemy5_1.png",
+        "assets/rare_enemies__enemy5_2.png",
+        "assets/rare_enemies__enemy5_3.png",
+        "assets/rare_enemies__enemy5_4.png",
+        "assets/rare_enemies__enemy5_5.png",
+        "assets/rare_enemies__enemy5_6.png",
+        "assets/rare_enemies__enemy5_7.png"
+      ]
+    },
+    "rare_enemy4_idle": {
+      "speed": 5.0,
+      "frames": [
+        "assets/rare_enemies__enemy6_1.png",
+        "assets/rare_enemies__enemy6_2.png",
+        "assets/rare_enemies__enemy6_3.png",
+        "assets/rare_enemies__enemy6_4.png"
+      ]
+    },
+    "rare_enemy5_idle": {
+      "speed": 5.0,
+      "frames": [
+        "assets/rare_enemies__enemy4_1.png",
+        "assets/rare_enemies__enemy4_2.png",
+        "assets/rare_enemies__enemy4_3.png",
+        "assets/rare_enemies__enemy4_4.png",
+        "assets/rare_enemies__enemy4_5.png",
+        "assets/rare_enemies__enemy4_6.png",
+        "assets/rare_enemies__enemy4_7.png",
+        "assets/rare_enemies__enemy4_8.png"
+      ]
+    },
+    "rare_enemy6_idle": {
+      "speed": 5.0,
+      "frames": [
+        "assets/rare_enemies__enemy7_1.png",
+        "assets/rare_enemies__enemy7_2.png",
+        "assets/rare_enemies__enemy7_3.png",
+        "assets/rare_enemies__enemy7_4.png",
+        "assets/rare_enemies__enemy7_5.png",
+        "assets/rare_enemies__enemy7_6.png",
+        "assets/rare_enemies__enemy7_7.png",
+        "assets/rare_enemies__enemy7_8.png",
+        "assets/rare_enemies__enemy7_9.png",
+        "assets/rare_enemies__enemy7_10.png"
+      ]
+    },
+    "rare_enemy7_idle": {
+      "speed": 5.0,
+      "frames": [
+        "assets/rare_enemies__enemy3_1.png",
+        "assets/rare_enemies__enemy3_2.png",
+        "assets/rare_enemies__enemy3_3.png",
+        "assets/rare_enemies__enemy3_4.png",
+        "assets/rare_enemies__enemy3_5.png",
+        "assets/rare_enemies__enemy3_6.png",
+        "assets/rare_enemies__enemy3_7.png",
+        "assets/rare_enemies__enemy3_8.png",
+        "assets/rare_enemies__enemy3_9.png",
+        "assets/rare_enemies__enemy3_10.png",
+        "assets/rare_enemies__enemy3_11.png",
+        "assets/rare_enemies__enemy3_12.png"
+      ]
+    }
+  },
+  "files": {
+    "assets/hero6/death1.png": "assets/hero6__death1.png",
+    "assets/hero6/death2.png": "assets/hero6__death2.png",
+    "assets/hero6/death3.png": "assets/hero6__death3.png",
+    "assets/hero6/death4.png": "assets/hero6__death4.png",
+    "assets/hero6/death5.png": "assets/hero6__death5.png",
+    "assets/hero6/death6.png": "assets/hero6__death6.png",
+    "assets/hero6/death7.png": "assets/hero6__death7.png",
+    "assets/hero2/11.png": "assets/hero2__11.png",
+    "assets/hero2/12.png": "assets/hero2__12.png",
+    "assets/hero2/13.png": "assets/hero2__13.png",
+    "assets/hero2/14.png": "assets/hero2__14.png",
+    "assets/hero2/01.png": "assets/hero2__01.png",
+    "assets/hero2/02.png": "assets/hero2__02.png",
+    "assets/hero2/15.png": "assets/hero2__15.png",
+    "assets/hero2/05.png": "assets/hero2__05.png",
+    "assets/hero2/03.png": "assets/hero2__03.png",
+    "assets/hero2/06.png": "assets/hero2__06.png",
+    "assets/hero2/07.png": "assets/hero2__07.png",
+    "assets/hero2/16.png": "assets/hero2__16.png",
+    "assets/hero2/08.png": "assets/hero2__08.png",
+    "assets/hero2/09.png": "assets/hero2__09.png",
+    "assets/hero3/09.png": "assets/hero3__09.png",
+    "assets/hero3/10.png": "assets/hero3__10.png",
+    "assets/hero3/11.png": "assets/hero3__11.png",
+    "assets/hero3/12.png": "assets/hero3__12.png",
+    "assets/hero3/13.png": "assets/hero3__13.png",
+    "assets/hero3/14.png": "assets/hero3__14.png",
+    "assets/hero3/15.png": "assets/hero3__15.png",
+    "assets/hero3/16.png": "assets/hero3__16.png",
+    "assets/hero3/01.png": "assets/hero3__01.png",
+    "assets/hero3/02.png": "assets/hero3__02.png",
+    "assets/hero3/03.png": "assets/hero3__03.png",
+    "assets/hero3/04.png": "assets/hero3__04.png",
+    "assets/hero3/05.png": "assets/hero3__05.png",
+    "assets/hero3/06.png": "assets/hero3__06.png",
+    "assets/hero3/07.png": "assets/hero3__07.png",
+    "assets/hero3/08.png": "assets/hero3__08.png",
+    "assets/hero3/01 — копия.png": "assets/hero3__01_.png",
+    "assets/hero3/02 — копия.png": "assets/hero3__02_.png",
+    "assets/hero3/03 — копия.png": "assets/hero3__03_.png",
+    "assets/hero3/04 — копия.png": "assets/hero3__04_.png",
+    "assets/hero3/05 — копия.png": "assets/hero3__05_.png",
+    "assets/hero3/06 — копия.png": "assets/hero3__06_.png",
+    "assets/hero3/07 — копия.png": "assets/hero3__07_.png",
+    "assets/hero3/08 — копия.png": "assets/hero3__08_.png",
+    "assets/hero4/01.png": "assets/hero4__01.png",
+    "assets/hero4/02.png": "assets/hero4__02.png",
+    "assets/hero4/03.png": "assets/hero4__03.png",
+    "assets/hero4/04.png": "assets/hero4__04.png",
+    "assets/hero4/05.png": "assets/hero4__05.png",
+    "assets/hero4/06.png": "assets/hero4__06.png",
+    "assets/hero4/07.png": "assets/hero4__07.png",
+    "assets/hero4/08.png": "assets/hero4__08.png",
+    "assets/hero4/09.png": "assets/hero4__09.png",
+    "assets/hero4/10.png": "assets/hero4__10.png",
+    "assets/hero4/11.png": "assets/hero4__11.png",
+    "assets/hero4/12.png": "assets/hero4__12.png",
+    "assets/hero4/07 — копия.png": "assets/hero4__07_.png",
+    "assets/hero4/08 — копия.png": "assets/hero4__08_.png",
+    "assets/hero4/09 — копия.png": "assets/hero4__09_.png",
+    "assets/hero4/10 — копия.png": "assets/hero4__10_.png",
+    "assets/hero4/11 — копия.png": "assets/hero4__11_.png",
+    "assets/hero4/12 — копия.png": "assets/hero4__12_.png",
+    "assets/hero5/06.png": "assets/hero5__06.png",
+    "assets/hero5/07.png": "assets/hero5__07.png",
+    "assets/hero5/01.png": "assets/hero5__01.png",
+    "assets/hero5/02.png": "assets/hero5__02.png",
+    "assets/hero5/03.png": "assets/hero5__03.png",
+    "assets/hero5/04.png": "assets/hero5__04.png",
+    "assets/hero5/05.png": "assets/hero5__05.png",
+    "assets/hero5/01 — копия.png": "assets/hero5__01_.png",
+    "assets/hero5/02 — копия.png": "assets/hero5__02_.png",
+    "assets/hero5/03 — копия.png": "assets/hero5__03_.png",
+    "assets/hero5/04 — копия.png": "assets/hero5__04_.png",
+    "assets/hero5/05 — копия.png": "assets/hero5__05_.png",
+    "assets/hero6/01.png": "assets/hero6__01.png",
+    "assets/hero6/02.png": "assets/hero6__02.png",
+    "assets/hero6/03 — копия.png": "assets/hero6__03_.png",
+    "assets/hero6/04 — копия.png": "assets/hero6__04_.png",
+    "assets/hero6/05 — копия.png": "assets/hero6__05_.png",
+    "assets/hero6/06 — копия.png": "assets/hero6__06_.png",
+    "assets/hero6/03.png": "assets/hero6__03.png",
+    "assets/hero6/04.png": "assets/hero6__04.png",
+    "assets/hero6/05.png": "assets/hero6__05.png",
+    "assets/hero6/06.png": "assets/hero6__06.png",
+    "assets/hero6/07.png": "assets/hero6__07.png",
+    "assets/enemies/enemy1_1.png": "assets/enemies__enemy1_1.png",
+    "assets/enemies/enemy1_2.png": "assets/enemies__enemy1_2.png",
+    "assets/enemies/enemy1_3.png": "assets/enemies__enemy1_3.png",
+    "assets/enemies/enemy1_4.png": "assets/enemies__enemy1_4.png",
+    "assets/enemies/enemy1_5.png": "assets/enemies__enemy1_5.png",
+    "assets/enemies/enemy2_1.png": "assets/enemies__enemy2_1.png",
+    "assets/enemies/enemy2_2.png": "assets/enemies__enemy2_2.png",
+    "assets/enemies/enemy2_3.png": "assets/enemies__enemy2_3.png",
+    "assets/enemies/enemy3_1.png": "assets/enemies__enemy3_1.png",
+    "assets/enemies/enemy3_2.png": "assets/enemies__enemy3_2.png",
+    "assets/enemies/enemy3_3.png": "assets/enemies__enemy3_3.png",
+    "assets/enemies/enemy4_1.png": "assets/enemies__enemy4_1.png",
+    "assets/enemies/enemy4_2.png": "assets/enemies__enemy4_2.png",
+    "assets/enemies/enemy4_3.png": "assets/enemies__enemy4_3.png",
+    "assets/rare_enemies/enemy1_1.png": "assets/rare_enemies__enemy1_1.png",
+    "assets/rare_enemies/enemy1_3.png": "assets/rare_enemies__enemy1_3.png",
+    "assets/rare_enemies/enemy1_2.png": "assets/rare_enemies__enemy1_2.png",
+    "assets/rare_enemies/enemy1_4.png": "assets/rare_enemies__enemy1_4.png",
+    "assets/rare_enemies/enemy1_5.png": "assets/rare_enemies__enemy1_5.png",
+    "assets/rare_enemies/enemy1_7.png": "assets/rare_enemies__enemy1_7.png",
+    "assets/rare_enemies/enemy1_6.png": "assets/rare_enemies__enemy1_6.png",
+    "assets/rare_enemies/enemy2_1.png": "assets/rare_enemies__enemy2_1.png",
+    "assets/rare_enemies/enemy2_2.png": "assets/rare_enemies__enemy2_2.png",
+    "assets/rare_enemies/enemy2_3.png": "assets/rare_enemies__enemy2_3.png",
+    "assets/rare_enemies/enemy2_4.png": "assets/rare_enemies__enemy2_4.png",
+    "assets/rare_enemies/enemy2_5.png": "assets/rare_enemies__enemy2_5.png",
+    "assets/rare_enemies/enemy2_6.png": "assets/rare_enemies__enemy2_6.png",
+    "assets/rare_enemies/enemy5_1.png": "assets/rare_enemies__enemy5_1.png",
+    "assets/rare_enemies/enemy5_2.png": "assets/rare_enemies__enemy5_2.png",
+    "assets/rare_enemies/enemy5_3.png": "assets/rare_enemies__enemy5_3.png",
+    "assets/rare_enemies/enemy5_4.png": "assets/rare_enemies__enemy5_4.png",
+    "assets/rare_enemies/enemy5_5.png": "assets/rare_enemies__enemy5_5.png",
+    "assets/rare_enemies/enemy5_6.png": "assets/rare_enemies__enemy5_6.png",
+    "assets/rare_enemies/enemy5_7.png": "assets/rare_enemies__enemy5_7.png",
+    "assets/rare_enemies/enemy6_1.png": "assets/rare_enemies__enemy6_1.png",
+    "assets/rare_enemies/enemy6_2.png": "assets/rare_enemies__enemy6_2.png",
+    "assets/rare_enemies/enemy6_3.png": "assets/rare_enemies__enemy6_3.png",
+    "assets/rare_enemies/enemy6_4.png": "assets/rare_enemies__enemy6_4.png",
+    "assets/rare_enemies/enemy4_1.png": "assets/rare_enemies__enemy4_1.png",
+    "assets/rare_enemies/enemy4_2.png": "assets/rare_enemies__enemy4_2.png",
+    "assets/rare_enemies/enemy4_3.png": "assets/rare_enemies__enemy4_3.png",
+    "assets/rare_enemies/enemy4_4.png": "assets/rare_enemies__enemy4_4.png",
+    "assets/rare_enemies/enemy4_5.png": "assets/rare_enemies__enemy4_5.png",
+    "assets/rare_enemies/enemy4_6.png": "assets/rare_enemies__enemy4_6.png",
+    "assets/rare_enemies/enemy4_7.png": "assets/rare_enemies__enemy4_7.png",
+    "assets/rare_enemies/enemy4_8.png": "assets/rare_enemies__enemy4_8.png",
+    "assets/rare_enemies/enemy7_1.png": "assets/rare_enemies__enemy7_1.png",
+    "assets/rare_enemies/enemy7_2.png": "assets/rare_enemies__enemy7_2.png",
+    "assets/rare_enemies/enemy7_3.png": "assets/rare_enemies__enemy7_3.png",
+    "assets/rare_enemies/enemy7_4.png": "assets/rare_enemies__enemy7_4.png",
+    "assets/rare_enemies/enemy7_5.png": "assets/rare_enemies__enemy7_5.png",
+    "assets/rare_enemies/enemy7_6.png": "assets/rare_enemies__enemy7_6.png",
+    "assets/rare_enemies/enemy7_7.png": "assets/rare_enemies__enemy7_7.png",
+    "assets/rare_enemies/enemy7_8.png": "assets/rare_enemies__enemy7_8.png",
+    "assets/rare_enemies/enemy7_9.png": "assets/rare_enemies__enemy7_9.png",
+    "assets/rare_enemies/enemy7_10.png": "assets/rare_enemies__enemy7_10.png",
+    "assets/rare_enemies/enemy3_1.png": "assets/rare_enemies__enemy3_1.png",
+    "assets/rare_enemies/enemy3_2.png": "assets/rare_enemies__enemy3_2.png",
+    "assets/rare_enemies/enemy3_3.png": "assets/rare_enemies__enemy3_3.png",
+    "assets/rare_enemies/enemy3_4.png": "assets/rare_enemies__enemy3_4.png",
+    "assets/rare_enemies/enemy3_5.png": "assets/rare_enemies__enemy3_5.png",
+    "assets/rare_enemies/enemy3_6.png": "assets/rare_enemies__enemy3_6.png",
+    "assets/rare_enemies/enemy3_7.png": "assets/rare_enemies__enemy3_7.png",
+    "assets/rare_enemies/enemy3_8.png": "assets/rare_enemies__enemy3_8.png",
+    "assets/rare_enemies/enemy3_9.png": "assets/rare_enemies__enemy3_9.png",
+    "assets/rare_enemies/enemy3_10.png": "assets/rare_enemies__enemy3_10.png",
+    "assets/rare_enemies/enemy3_11.png": "assets/rare_enemies__enemy3_11.png",
+    "assets/rare_enemies/enemy3_12.png": "assets/rare_enemies__enemy3_12.png",
+    "assets/map/map.png": "assets/map__map.png",
+    "assets/map/Max_a_убери_кнопки_и_надпи.png": "assets/map__Max_a________.png",
+    "assets/map/gameover_background.png": "assets/map__gameover_background.png",
+    "assets/UI/EU/menu_background.png": "assets/EU__menu_background.png",
+    "assets/UI/Max_a_на_первом_фото_сдела (1).png": "assets/UI__Max_a________1_.png",
+    "assets/UI/Max_a_перемести_череп_и_от.png": "assets/UI__Max_a________.png",
+    "assets/UI/EU/AllCatsCollected.png": "assets/EU__AllCatsCollected.png",
+    "assets/UI/EU/Cats_collected_0_7.png": "assets/EU__Cats_collected_0_7.png",
+    "assets/UI/EU/Cats_collected_1_7.png": "assets/EU__Cats_collected_1_7.png",
+    "assets/UI/EU/Cats_collected_2_7.png": "assets/EU__Cats_collected_2_7.png",
+    "assets/UI/EU/Cats_collected_3_7.png": "assets/EU__Cats_collected_3_7.png",
+    "assets/UI/EU/Cats_collected_4_7.png": "assets/EU__Cats_collected_4_7.png",
+    "assets/UI/EU/Cats_collected_5_7.png": "assets/EU__Cats_collected_5_7.png",
+    "assets/UI/EU/Cats_collected_6_7.png": "assets/EU__Cats_collected_6_7.png",
+    "assets/UI/EU/btn_play.png": "assets/EU__btn_play.png",
+    "assets/UI/EU/gameover_title.png": "assets/EU__gameover_title.png",
+    "assets/pill/Max_a_создай_спрайт_домика.png": "assets/pill__Max_a______.png",
+    "assets/pill/Max_a_помести_в_домик_посе.png": "assets/pill__Max_a________.png",
+    "assets/rare_enemies/01_.png": "assets/rare_enemies__01_.png",
+    "assets/rare_enemies/02_.png": "assets/rare_enemies__02_.png",
+    "assets/rare_enemies/03_.png": "assets/rare_enemies__03_.png",
+    "assets/rare_enemies/04_.png": "assets/rare_enemies__04_.png",
+    "assets/rare_enemies/05_.png": "assets/rare_enemies__05_.png",
+    "assets/rare_enemies/06_.png": "assets/rare_enemies__06_.png",
+    "assets/rare_enemies/07_.png": "assets/rare_enemies__07_.png",
+    "assets/rare_enemies/01_found.png": "assets/rare_enemies__01_found.png",
+    "assets/rare_enemies/02_found.png": "assets/rare_enemies__02_found.png",
+    "assets/rare_enemies/03_found.png": "assets/rare_enemies__03_found.png",
+    "assets/rare_enemies/04_found.png": "assets/rare_enemies__04_found.png",
+    "assets/rare_enemies/05_found.png": "assets/rare_enemies__05_found.png",
+    "assets/rare_enemies/06_found.png": "assets/rare_enemies__06_found.png",
+    "assets/rare_enemies/07_found.png": "assets/rare_enemies__07_found.png",
+    "music/music_level.mp3": "assets/music_level.mp3",
+    "music/music_menu.mp3": "assets/music_menu.mp3",
+    "music/horror.mp3": "assets/horror.mp3",
+    "music/win.mp3": "assets/win.mp3",
+    "music/chime.wav": "assets/chime.wav",
+    "music/sound_eat.mp3": "assets/sound_eat.mp3"
+  }
+}

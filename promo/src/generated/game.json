@@ -1,0 +1,35 @@
+{
+  "title": "Waka",
+  "stages": [
+    {
+      "name": "Младенец",
+      "speed": 1.35,
+      "animation": "stage_1"
+    },
+    {
+      "name": "Ребёнок",
+      "speed": 1.3,
+      "animation": "stage_2"
+    },
+    {
+      "name": "Подросток",
+      "speed": 1.25,
+      "animation": "stage_3"
+    },
+    {
+      "name": "Юноша",
+      "speed": 1.2000000000000002,
+      "animation": "stage_4"
+    },
+    {
+      "name": "Взрослый",
+      "speed": 1.1,
+      "animation": "stage_5"
+    }
+  ],
+  "killsPerStage": 10,
+  "maxStage": 5,
+  "oldAgeSeconds": 60,
+  "winTotal": 300,
+  "rareCats": 7
+}
