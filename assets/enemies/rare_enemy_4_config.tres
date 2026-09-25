@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="RareEnemyConfig" format=3 uid="uid://c6rfs71w571nt"]
 
 [ext_resource type="Script" uid="uid://27wqffcemtvr" path="res://scripts/rare_enemy_config.gd" id="1_msgfh"]
-[ext_resource type="Texture2D" uid="uid://6suvm3okbkd6" path="res://assets/rare_enemies/04_.png" id="1_yn7pr"]
+[ext_resource type="Texture2D" uid="uid://ch2dsniqsn3op" path="res://assets/rare_enemies/RUS/04_.png" id="1_yn7pr"]
 [ext_resource type="PackedScene" uid="uid://dmsvk6w4d5b5j" path="res://scenes/rare_enemy_4.tscn" id="2_yn7pr"]
 
 [resource]
