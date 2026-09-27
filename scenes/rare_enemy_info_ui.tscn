@@ -41,7 +41,7 @@ offset_right = 243.0
 offset_bottom = 69.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "Rare cat! +5 cats"
+text = "Редкая кошка! +5 кошек"
 
 [node name="CloseButton" type="TextureButton" parent="InfoPanel" unique_id=322548068]
 layout_mode = 1

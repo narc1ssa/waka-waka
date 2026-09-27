@@ -30,6 +30,14 @@
 [ext_resource type="PackedScene" uid="uid://bcdeuct7jlve4" path="res://scenes/tutorial_screen.tscn" id="28_e2s0e"]
 [ext_resource type="Script" uid="uid://p5pq00v5c3wi" path="res://scripts/collection_manager.gd" id="28_ma7h6"]
 [ext_resource type="PackedScene" uid="uid://bhxli1rflhu8n" path="res://scenes/final_collection_screen.tscn" id="29_e2s0e"]
+[ext_resource type="Texture2D" uid="uid://deyasa6atltfa" path="res://assets/UI/EU/Cats_collected_0_7.png" id="30_cobve"]
+[ext_resource type="Texture2D" uid="uid://c4tdtnkgb0rdd" path="res://assets/UI/Cats_collected_1_7.png" id="31_cmqll"]
+[ext_resource type="Texture2D" uid="uid://bj8ybww5g66pp" path="res://assets/UI/Cats_collected_2_7.png" id="32_8cp6k"]
+[ext_resource type="Texture2D" uid="uid://0ind4ycu8pps" path="res://assets/UI/Cats_collected_3_7.png" id="33_8b871"]
+[ext_resource type="Texture2D" uid="uid://dfyaj6liq3b20" path="res://assets/UI/Cats_collected_4_7.png" id="34_pdwbg"]
+[ext_resource type="Texture2D" uid="uid://bxr4un2bj0miu" path="res://assets/UI/Cats_collected_5_7.png" id="35_5grtr"]
+[ext_resource type="Texture2D" uid="uid://bvqk7yn00ho0e" path="res://assets/UI/Cats_collected_6_7.png" id="36_vua0o"]
+[ext_resource type="Texture2D" uid="uid://dyprigfm732js" path="res://assets/UI/AllCatsCollected.png" id="37_t70y2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vcsgt"]
 size = Vector2(2566.5, 42.5)
@@ -550,7 +558,6 @@ theme_override_colors/font_shadow_color = Color(18.892157, 18.892157, 18.892157,
 theme_override_font_sizes/font_size = 16
 
 [node name="PauseUI" type="CanvasLayer" parent="." unique_id=974323536]
-visible = false
 script = ExtResource("8_q8u5g")
 
 [node name="PausePanel" type="Panel" parent="PauseUI" unique_id=1427718208]
@@ -654,7 +661,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="GameOverUI" type="CanvasLayer" parent="." unique_id=993204968]
-visible = false
 script = ExtResource("9_lhr70")
 
 [node name="GameOverPanel" type="Panel" parent="GameOverUI" unique_id=1183450050]
@@ -714,7 +720,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="VictoryUI" type="CanvasLayer" parent="." unique_id=1223769828]
-visible = false
 script = ExtResource("22_ebg2g")
 
 [node name="VictoryPanel" type="Panel" parent="VictoryUI" unique_id=1782770002]
@@ -765,7 +770,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="MenuButton" type="TextureButton" parent="VictoryUI/VictoryPanel" unique_id=1451451950]
-visible = false
 custom_minimum_size = Vector2(150, 90)
 custom_maximum_size = Vector2(300, 80)
 layout_mode = 1
@@ -789,15 +793,13 @@ stretch_mode = 5
 [node name="RareEnemySpawner" parent="." unique_id=397771721 instance=ExtResource("26_36rkl")]
 
 [node name="RareEnemyInfoUI" parent="." unique_id=927427674 instance=ExtResource("27_fs0b5")]
-visible = false
 
 [node name="CollectionManager" type="Node" parent="." unique_id=48290359]
 script = ExtResource("28_ma7h6")
 
 [node name="FinalCollectionScreen" parent="." unique_id=663275249 instance=ExtResource("29_e2s0e")]
-visible = false
+progress_images = Array[Texture2D]([ExtResource("30_cobve"), ExtResource("31_cmqll"), ExtResource("32_8cp6k"), ExtResource("33_8b871"), ExtResource("34_pdwbg"), ExtResource("35_5grtr"), ExtResource("36_vua0o"), ExtResource("37_t70y2")])
 
 [node name="TutorialScreen" parent="." unique_id=977576208 instance=ExtResource("28_e2s0e")]
-visible = false
 
 [editable path="Player"]
