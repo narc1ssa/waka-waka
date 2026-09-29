@@ -465,8 +465,6 @@ position = Vector2(803, 1757)
 script = ExtResource("4_nxtc6")
 enemy_scene = ExtResource("1_rvslj")
 animation_names = Array[String](["enemy1_idle", "enemy2_idle", "enemy3_idle", "enemy4_idle"])
-initial_enemies = 10
-max_enemies = 15
 
 [node name="Player" parent="." unique_id=886771977 instance=ExtResource("2_0bbpv")]
 position = Vector2(150, 150)
