@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Waka"
+config/name="Waka (mobile)"
 run/main_scene="uid://b8hprkren0rdc"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -25,7 +25,6 @@ AudioManager="*uid://m10pq2r12ul0"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/mode=3
 window/size/borderless=true
 window/stretch/mode="canvas_items"
 
